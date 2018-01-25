@@ -1,0 +1,29 @@
+// Color Me Sass
+// Built by Richard Bray, edited by Joey Grable
+
+// non-saturates
+@import "_blacks.scss";
+@import "_whites.scss";
+
+// compond mixes
+@import "_grays.scss";
+@import "_browns.scss";
+@import "_tans.scss";
+
+// RGBIV + variations + brand colors
+@import "_reds.scss";
+@import "_peaches.scss";
+@import "_oranges.scss";
+@import "_ambers.scss";
+@import "_yellows.scss";
+@import "_limes.scss";
+@import "_greens.scss";
+@import "_turquoise.scss";
+@import "_blues.scss";
+@import "_purples.scss";
+@import "_pinks.scss";
+
+// framework standards
+@import "_bootstrap.scss";
+@import "_foundation.scss";
+@import "_preboot.scss";

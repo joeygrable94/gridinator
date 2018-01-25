@@ -1,0 +1,36 @@
+// tables
+table {
+	@include base-x();
+	@include margin-em($mltp: $baseline-mltp, $sides: bottom);
+}
+
+// groups
+thead { font-weight: bolder; }
+tbody {}
+tfoot {}
+
+// rows
+tr {
+	// border rows
+	@if $table-row-bordered {
+		@include border($sides: bottom);
+	}
+	// stripe rows
+	@if $table-row-striped {
+		&:nth-child(even) {
+			background-color: $black20;
+		}
+	}
+}
+
+// headers & cells
+th, td {
+	@include padding($mltp: $baseline-unit, $sides: $list-tb);
+	text-align: left;
+	&:first-child {
+		@include padding-em($mltp: ($baseline-mltp / 2), $sides: left);
+	}
+	&:last-child {
+		@include padding-em($mltp: ($baseline-mltp / 2), $sides: right);
+	}
+}

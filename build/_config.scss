@@ -1,0 +1,307 @@
+// ============================================================
+//
+//	CONFIG BASECAMP
+//
+// ============================================================
+
+
+
+
+
+// ============================================================
+//
+//	CSS GRID DEFAULTS
+//
+// ============================================================
+
+// 2x2 square grid, no gap
+$gridinator-cols: "repeat(2, 1fr)";
+$gridinator-rows: "repeat(2, 1fr)";
+$gridinator-gap: 0px 0px;
+
+
+
+
+
+// ============================================================
+//
+//	RESPONSIVE: MOBILE FIRST
+//
+// ============================================================
+
+// breakpoints
+$breakpoint-sm: 420px;
+$breakpoint-md: 760px;
+$breakpoint-lg: 1080px;
+$breakpoint-xl: 1440px;
+
+
+
+
+
+// ============================================================
+//
+//	COLORS
+//
+// ============================================================
+
+// palettes
+$color-primary:		$blue-primary !default;
+$color-secondary:	$yellow-goldmetal !default;
+$color-tertiary:	$red-danger !default;
+
+// states
+$color-success:		$green-success !default;
+$color-info:		$blue-info !default;
+$color-warning:		$yellow-warning !default;
+$color-error:		$orange-dark !default;
+
+
+
+
+
+// ============================================================
+//
+//	TYPOGRAPHY
+//
+// ============================================================
+
+// load typography
+$load-typesettings: true !default;
+
+// if full screen responsive app enabled
+$full-screen-responsive: true !default;
+
+// The vertical grid unit.
+$baseline-unit: 8px !default;
+
+// This gives type an ideal line-height.
+$baseline-mltp: 4 !default;
+
+// Base font size in pixels.
+$base-font-size: 18px !default;
+
+// Modular scale ratio
+$ratio-modular-scale: 1.5 !default;
+
+// paragraph-indent option
+$paragraph-indent: true !default;
+
+// text-justify
+$paragraph-justify: false !default;
+
+// base font family
+$base-font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif !default;
+
+// headers fonts
+$base-font-headers: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif !default;
+
+// monospaced fonts
+$base-font-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace !default;
+
+
+
+
+
+// ============================================================
+//
+//	ELEMENTS
+//
+// ============================================================
+
+// borders
+$border-width-default: 1px;
+$border-style-default: solid;
+$border-color-default: $black30;
+$border-radius-default: $baseline-mltp;
+
+
+
+
+
+// ============================================================
+//
+//	FORMS
+//
+// ============================================================
+
+// label
+$form-label-font-weight: 400;
+
+// input
+$form-input-color: $black;
+$form-input-background-color: $transparent;
+$form-input-box-shadow: 0px 0px 5px -2px $color-primary;
+
+// input border
+$form-input-border-width: 1px;
+$form-input-border-color: $gray-light;
+$form-input-border: $form-input-border-width solid $form-input-border-color;
+$form-input-border-radius: 0px;
+
+// disabled
+$form-input-disabled-color: $black10;
+
+// input focus
+$form-input-focus-color: $black;
+$form-input-focus-background: $transparent;
+$form-input-focus-border-color: $color-primary;
+$form-input-focus-box-shadow: 0px 0px 5px -2px $color-primary;
+
+
+
+
+
+// ============================================================
+//
+//	TABLES
+//
+// ============================================================
+
+$table-row-bordered: true !default;
+$table-row-striped: true !default;
+
+
+
+
+
+// ============================================================
+//
+//	BUTTONS
+//
+// ============================================================
+
+	// base
+	$btn-font-size: inheret;
+	$btn-font-weight: 400;
+	$btn-border-radius: 4px;
+	$btn-border-width: 2px;
+	$btn-border-style: solid;
+	$btn-border-color: $black;
+	$btn-link-disabled-color: $gray-silver;
+
+	// default
+	$btn-default-color: $white;
+	$btn-default-background: $black;
+	// border
+	$btn-default-border-width: $btn-border-width;
+	$btn-default-border-style: $btn-border-style;
+	$btn-default-border-color: $black;
+		// :hover
+		$btn-default-color-hover: $white;
+		$btn-default-background-hover: $black70;
+		// :hover border
+		$btn-default-border-width-hover: $btn-border-width;
+		$btn-default-border-style-hover: $btn-border-style;
+		$btn-default-border-color-hover: $black;
+
+	// primary
+	$btn-primary-color: $white;
+	$btn-primary-background: $color-primary;
+	// border
+	$btn-primary-border-width: $btn-border-width;
+	$btn-primary-border-style: $btn-border-style;
+	$btn-primary-border-color: $color-primary;
+		// :hover
+		$btn-primary-color-hover: $white;
+		$btn-primary-background-hover: lighten($color-primary, 10%);
+		// :hover border
+		$btn-primary-border-width-hover: $btn-border-width;
+		$btn-primary-border-style-hover: $btn-border-style;
+		$btn-primary-border-color-hover: $color-primary;
+
+	// secondary
+	$btn-secondary-color: $white;
+	$btn-secondary-background: $color-secondary;
+	// border
+	$btn-secondary-border-width: $btn-border-width;
+	$btn-secondary-border-style: $btn-border-style;
+	$btn-secondary-border-color: $color-secondary;
+		// :hover
+		$btn-secondary-color-hover: $white;
+		$btn-secondary-background-hover: lighten($color-secondary, 10%);
+		// :hover border
+		$btn-secondary-border-width-hover: $btn-border-width;
+		$btn-secondary-border-style-hover: $btn-border-style;
+		$btn-secondary-border-color-hover: $color-secondary;
+
+	// tertiary
+	$btn-tertiary-color: $white;
+	$btn-tertiary-background: $color-tertiary;
+	// border
+	$btn-tertiary-border-width: $btn-border-width;
+	$btn-tertiary-border-style: $btn-border-style;
+	$btn-tertiary-border-color: $color-tertiary;
+		// :hover
+		$btn-tertiary-color-hover: $white;
+		$btn-tertiary-background-hover: lighten($color-tertiary, 10%);
+		// :hover border
+		$btn-tertiary-border-width-hover: $btn-border-width;
+		$btn-tertiary-border-style-hover: $btn-border-style;
+		$btn-tertiary-border-color-hover: $color-tertiary;
+
+	// success
+	$btn-success-color: $white;
+	$btn-success-background: $color-success;
+	// border
+	$btn-success-border-width: $btn-border-width;
+	$btn-success-border-style: $btn-border-style;
+	$btn-success-border-color: $color-success;
+		// :hover
+		$btn-success-color-hover: $white;
+		$btn-success-background-hover: lighten($color-success, 10%);
+		// :hover border
+		$btn-success-border-width-hover: $btn-border-width;
+		$btn-success-border-style-hover: $btn-border-style;
+		$btn-success-border-color-hover: $color-success;
+
+	// info
+	$btn-info-color: $white;
+	$btn-info-background: $color-info;
+	// border
+	$btn-info-border-width: $btn-border-width;
+	$btn-info-border-style: $btn-border-style;
+	$btn-info-border-color: $color-info;
+		// :hover
+		$btn-info-color-hover: $white;
+		$btn-info-background-hover: lighten($color-info, 10%);
+		// :hover border
+		$btn-info-border-width-hover: $btn-border-width;
+		$btn-info-border-style-hover: $btn-border-style;
+		$btn-info-border-color-hover: $color-info;
+
+	// warning
+	$btn-warning-color: $white;
+	$btn-warning-background: $color-warning;
+	// border
+	$btn-warning-border-width: $btn-border-width;
+	$btn-warning-border-style: $btn-border-style;
+	$btn-warning-border-color: $color-warning;
+		// :hover
+		$btn-warning-color-hover: $white;
+		$btn-warning-background-hover: lighten($color-warning, 10%);
+		// :hover border
+		$btn-warning-border-width-hover: $btn-border-width;
+		$btn-warning-border-style-hover: $btn-border-style;
+		$btn-warning-border-color-hover: $color-warning;
+
+	// error
+	$btn-error-color: $white;
+	$btn-error-background: $color-error;
+	// border
+	$btn-error-border-width: $btn-border-width;
+	$btn-error-border-style: $btn-border-style;
+	$btn-error-border-color: $color-error;
+		// :hover
+		$btn-error-color-hover: $white;
+		$btn-error-background-hover: lighten($color-error, 10%);
+		// :hover border
+		$btn-error-border-width-hover: $btn-border-width;
+		$btn-error-border-style-hover: $btn-border-style;
+		$btn-error-border-color-hover: $color-error;
+
+
+
+
+
+// 

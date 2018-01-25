@@ -1,0 +1,126 @@
+//  Defaults
+// =========================
+$count-default: 1 !default;
+$duration-default: 1s !default;
+$delay-default: 0s !default;
+$function-default: ease !default;
+$fill-default: both;
+$visibility-default: hidden !default;
+
+
+//  Attention Seekers
+// =========================
+@include bounce();
+@include flash();
+@include pulse();
+@include rubber-band();
+@include shake();
+@include swing();
+@include tada();
+@include wobble();
+@include jello();
+
+//  Bouncing Entrances
+// =========================
+@include bounce-in();
+@include bounce-in-down();
+@include bounce-in-left();
+@include bounce-in-right();
+@include bounce-in-up();
+
+//  Bouncing Exits
+// =========================
+@include bounce-out();
+@include bounce-out-down();
+@include bounce-out-left();
+@include bounce-out-right();
+@include bounce-out-up();
+
+//  Fading Entrances
+// =========================
+@include fade-in();
+@include fade-in-down();
+@include fade-in-down-big();
+@include fade-in-left();
+@include fade-in-left-big();
+@include fade-in-right();
+@include fade-in-right-big();
+@include fade-in-up();
+@include fade-in-up-big();
+
+//  Fading Exits
+// =========================
+@include fade-out();
+@include fade-out-down();
+@include fade-out-down-big();
+@include fade-out-left();
+@include fade-out-left-big();
+@include fade-out-right();
+@include fade-out-right-big();
+@include fade-out-up();
+@include fade-out-up-big();
+
+//  Flippers
+// =========================
+@include flip();
+@include flip-in-x();
+@include flip-in-y();
+@include flip-out-x();
+@include flip-out-y();
+
+//  Lightspeed
+// =========================
+@include lightspeed-n();
+@include lightspeed-out();
+
+//  Rotating Entrances
+// =========================
+@include rotate-in();
+@include rotate-in-down-left();
+@include rotate-in-down-right();
+@include rotate-in-up-left();
+@include rotate-in-up-right();
+
+//  Rotating Exits
+// =========================
+@include rotate-out();
+@include rotate-out-down-left();
+@include rotate-out-down-right();
+@include rotate-out-up-left();
+@include rotate-out-up-right();
+
+//  Sliding Entrances
+// =========================
+@include slide-in-up();
+@include slide-in-down();
+@include slide-in-left();
+@include slide-in-right();
+
+//  Sliding Exits
+// =========================
+@include slide-out-up();
+@include slide-out-down();
+@include slide-out-left();
+@include slide-out-right();
+
+//  Zoom Entrances
+// =========================
+@include zoom-in();
+@include zoom-in-down();
+@include zoom-in-left();
+@include zoom-in-right();
+@include zoom-in-up();
+
+//  Zoom Exits
+// =========================
+@include zoom-out();
+@include zoom-out-down();
+@include zoom-out-left();
+@include zoom-out-right();
+@include zoom-out-up();
+
+//  Specials
+// =========================
+@include hinge();
+@include roll-in();
+@include roll-out();

@@ -1,0 +1,119 @@
+
+// forms
+form {
+	display: block;
+	margin: 0 auto;
+}
+
+fieldset,
+.form-group {
+	@include margin-em($mltp: ($baseline-mltp / 2), $sides: bottom);
+}
+
+// form inline
+.form-inline {
+	display: flex;
+	flex-wrap: wrap;
+	> .span,
+	> [class*="span-"] {
+		padding-right: $baseline-unit;
+		padding-left: $baseline-unit;
+	}
+}
+
+// inputs, select, textareas
+input, select, textarea {
+	@include form-input-base();
+	@include hover { cursor: pointer; }
+	@include form-input-focus();
+
+	&:not(.btn) {
+		@include padding($mltp: $baseline-unit, $sides: true);
+	}
+}
+
+// input
+input {
+	&[type=text] {}
+	&[type=password] {}
+	&[type=email] {}
+	&[type=submit] {}
+	
+	// files: make file inputs take up a whole line
+	&[type=file] {
+		display: block;
+		width: 100%;
+	}
+	
+	// checkbox & radio
+	&[type=checkbox],
+	&[type=radio] {
+		-webkit-appearance: none;
+				appearance: none;
+		display: inline-block;
+		position: relative;
+		width: ($baseline-unit * $baseline-mltp) / $ratio-modular-scale;
+		height: ($baseline-unit * $baseline-mltp) / $ratio-modular-scale;
+		@include margin($mltp: ($baseline-unit * $baseline-mltp), $sides: $list-lr);
+		@include border();
+		@include border-radius($form-input-border-radius);
+		background-color: $transparent;
+		
+		// active states
+		&:active,
+		&:checked:active { position: relative; }
+		// checked
+		&:checked { position: relative; }
+		// check mark
+		&:checked:after {
+			content: '\2713';
+			position: absolute;
+			top: -($baseline-unit) + 2px;
+			left: 0;
+			font-size: 115%;
+		}
+	}
+
+	// radio
+	&[type=radio] {
+		@include border($border-width: ($border-width-default + 0.5));
+		@include border-radius(($baseline-unit * $baseline-mltp) / $ratio-modular-scale);
+	}
+
+	// transparent background
+	&.transparent {
+		-webkit-box-shadow: inset 0 0 8px  $transparent, 0 0 16px $transparent;
+		   -moz-box-shadow: inset 0 0 8px  $transparent, 0 0 16px $transparent;
+				box-shadow: inset 0 0 8px  $transparent, 0 0 16px $transparent;
+		background-color: $transparent;
+	}
+}
+
+// select fixes
+select {
+	// make select the same height as the ratio:rhythm line-height
+	&:not([size]),
+	&:not([multiple]) {
+		height: rhythm-em($baseline-mltp);
+		border-radius: $form-input-border-radius;
+	}
+	// IE dropdown fix
+	&:focus::-ms-value {
+		color: $form-input-color;
+		background-color: $form-input-background-color;
+	}
+}
+
+// textarea
+textarea {
+	letter-spacing: 0.3px;
+	white-space: pre-line;
+	resize: none;
+}
+
+// labels
+label {
+	line-height: inherit;
+	font-size: inherit;
+	font-weight: $form-label-font-weight;
+}

@@ -1,0 +1,184 @@
+// CSS Prototype classes
+@if $prototype {
+
+
+
+
+
+// FLEX GRID prototyping classes
+	.gflex {
+		-webkit-display: flex;
+		display: flex;
+		-webkit-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: nowrap;
+		flex-wrap: nowrap;
+		// center
+		&.center {
+			-webkit-justify-content: center;
+			justify-content: center;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-align-content: center;
+			align-content: center;
+		}
+	}
+
+
+
+
+
+
+// GRID XY prototyping classes
+	// GY
+	.gx {
+		width: 100%;
+		@each $gcol in $gridXYprototype {
+			@for $i from 1 through $gcol {
+				&.gcol-#{$gcol} > .span-#{$i} {
+					width: spanWidth(calculateColumns($gcol), $i);
+				}
+			}	
+		}
+	}
+	// GY
+	.gy {
+		position: relative;
+		width: 100%;
+		height: auto;
+		background-size: cover;
+		background-position: center;
+		& .gy-fluid	{
+			min-height: 100%;
+		}
+		// viewport height
+		@for $i from 1 through 100 {
+			&.grow-vh-#{$i} {
+				height: unquote("#{$i}vh");
+			}
+		}
+		// percent
+		@for $i from 1 through 100 {
+			&.grow-pct-#{$i} {
+				height: unquote("#{$i}%");;
+			}
+		}
+	}
+	// scroll inner content
+	.gy-scroll {
+		overflow: scroll;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		&::-webkit-scrollbar {
+			// remove scrollbar space
+			width: 0px; 
+			// optional: just make scrollbar invisible
+			background: transparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			// optional: show position indicator in red
+			background: #FF0000;
+		}
+	}
+
+
+
+
+
+// GRID: spacing helpers
+	// vh
+	.vh-100		{	height: 100vh;		}
+	.vh-90		{	height: 90vh;		}
+	.vh-80		{	height: 80vh;		}
+	.vh-70		{	height: 70vh;		}
+	.vh-60		{	height: 60vh;		}
+	.vh-50		{	height: 50vh;		}
+	.vh-40		{	height: 40vh;		}
+	.vh-30		{	height: 30vh;		}
+	.vh-20		{	height: 20vh;		}
+	.vh-10		{	height: 10vh;		}
+	.vh-66		{	height: 66.666vh;	}
+	.vh-33		{	height: 33.333vh;	}
+	.vh-75		{	height: 75vh;		}
+	.vh-25		{	height: 25vh;		}
+	// percent
+	.pct-100	{	height: 100%;		}
+	.pct-90		{	height: 90%;		}
+	.pct-80		{	height: 80%;		}
+	.pct-70		{	height: 70%;		}
+	.pct-60		{	height: 60%;		}
+	.pct-50		{	height: 50%;		}
+	.pct-40		{	height: 40%;		}
+	.pct-30		{	height: 30%;		}
+	.pct-20		{	height: 20%;		}
+	.pct-10		{	height: 10%;		}
+	.pct-66		{	height: 66.666%;	}
+	.pct-33		{	height: 33.333%;	}
+	.pct-75		{	height: 75%;		}
+	.pct-25		{	height: 25%;		}
+	// pixel
+	.px-10		{	height: 10px;	}
+	.px-20		{	height: 20px;	}
+	.px-30		{	height: 30px;	}
+	.px-40		{	height: 40px;	}
+	.px-50		{	height: 50px;	}
+	.px-60		{	height: 60px;	}
+	.px-70		{	height: 70px;	}
+	.px-80		{	height: 80px;	}
+	.px-90		{	height: 90px;	}
+	.px-100		{	height: 100px;	}
+	// point: multiples of 10
+	.pt-10	 	{	height: 10pt;	}
+	.pt-20	 	{	height: 20pt;	}
+	.pt-30	 	{	height: 30pt;	}
+	.pt-40	 	{	height: 40pt;	}
+	.pt-50	 	{	height: 50pt;	}
+	.pt-60	 	{	height: 60pt;	}
+	.pt-70	 	{	height: 70pt;	}
+	.pt-80	 	{	height: 80pt;	}
+	.pt-90	 	{	height: 90pt;	}
+	.pt-100	 	{	height: 100pt;	}
+	// point: 12pt scale
+	.pt-12	 	{	height: 12pt;	}
+	.pt-24	 	{	height: 24pt;	}
+	.pt-36	 	{	height: 36pt;	}
+	.pt-48	 	{	height: 48pt;	}
+	.pt-60	 	{	height: 60pt;	}
+	.pt-72	 	{	height: 72pt;	}
+	.pt-96	 	{	height: 96pt;	}
+	.pt-108	 	{	height: 108pt;	}
+	.pt-120	 	{	height: 120pt;	}
+	.pt-132	 	{	height: 132pt;	}
+	.pt-144	 	{	height: 144pt;	}
+	.pt-156	 	{	height: 156pt;	}
+	.pt-168	 	{	height: 168pt;	}
+	.pt-180	 	{	height: 180pt;	}
+	.pt-192	 	{	height: 192pt;	}
+	.pt-204	 	{	height: 204pt;	}
+	.pt-216	 	{	height: 216pt;	}
+	.pt-228	 	{	height: 228pt;	}
+	.pt-240	 	{	height: 240pt;	}
+	.pt-252	 	{	height: 252pt;	}
+	.pt-264	 	{	height: 264pt;	}
+	.pt-276	 	{	height: 276pt;	}
+	.pt-288	 	{	height: 288pt;	}
+	.pt-300	 	{	height: 300pt;	}
+
+
+
+
+
+// CONTAINERS prototyping classes
+// @if $prototype: config/_config.scss
+//	$responsiveBreakpoints: (_variables.scss)
+	.contain {
+		@each $val in $responsiveBreakpoints {
+			&.c#{$val} { max-width: $val; }
+		}
+	}
+
+
+
+
+
+} // END PROTOTYPE

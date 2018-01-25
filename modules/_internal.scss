@@ -1,0 +1,103 @@
+// ============================================================
+// 
+//	INTERNAL VARIABLES
+// 
+// @author: Joey Grable
+// @notes:
+//	- It's Best to edit the config to adjust your settings
+//	- Do not adjust the internal variables directly, unless
+//	  making changes to the framework
+// 
+// ============================================================
+
+
+
+
+
+// ============================================================
+//
+//	DEFAULTS
+//
+// ============================================================
+// Warning text for when an integer is not used in rhythm functions
+$not-integer-txt: ' value breaks vertical rhythm. Use an integer (whole number) for $lines.';
+// Create a handy variable for the 1em
+$base-font-em: 1em;
+
+
+
+
+
+// ============================================================
+//
+//	MODULAR SCALE
+//
+// Generates modular scale values in Ems.
+// If you need more size up and/or down then add more sizes.
+//	[1] One step down in the modular scale in EMs
+//	[2] One step up in the modular scale in EMs
+//
+// ============================================================
+// down
+$ms-down-1:	$base-font-em / $ratio-modular-scale; // [1]
+$ms-down-2:	$ms-down-1 /$ratio-modular-scale;
+$ms-down-3:	$ms-down-2 / $ratio-modular-scale;
+$ms-down-4:	$ms-down-3 / $ratio-modular-scale;
+// up
+$ms-up-1:	$base-font-em * $ratio-modular-scale; // [2]
+$ms-up-2:	$ms-up-1 * $ratio-modular-scale;
+$ms-up-3:	$ms-up-2 * $ratio-modular-scale;
+$ms-up-4:	$ms-up-3 * $ratio-modular-scale;
+$ms-up-5:	$ms-up-4 * $ratio-modular-scale;
+$ms-up-6:	$ms-up-5 * $ratio-modular-scale;
+$ms-up-7:	$ms-up-6 * $ratio-modular-scale;
+$ms-up-8:	$ms-up-7 * $ratio-modular-scale;
+$ms-up-9:	$ms-up-8 * $ratio-modular-scale;
+$ms-up-10:	$ms-up-9 * $ratio-modular-scale;
+
+
+
+
+
+// ============================================================
+//
+//	GRID PROTOTYPE
+//
+// ============================================================
+// list of all prototyping grid columns you want avaiable
+$gridXY-prototype: 1, 2, 3, 4, 5, 10, 12, 20, 24;
+
+
+
+
+
+// ============================================================
+//
+//	SPACING HELPER VARS
+//
+// ============================================================
+$list-sides: "top", "right", "bottom", "left";
+$list-tb: "top", "bottom";
+$list-lr: "left", "right";
+
+
+
+
+
+// ============================================================
+//
+//	COLOR
+//
+// ============================================================
+// lightness value that determines when the lightness of color changes
+// from "dark" to "light". Acceptable values are between 0 and 255.
+$color-contrasted-threshold: 150 !default;
+// customize the light and dark text colors for use in color contrast function.
+$color-contrast-text-dark: $black50 !default;
+$color-contrast-text-light: $white !default;
+
+
+
+
+
+// 

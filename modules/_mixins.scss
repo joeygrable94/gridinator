@@ -1,0 +1,978 @@
+// ============================================================
+//
+//	Mixin(s)
+//
+// ============================================================
+
+
+
+
+
+// ============================================================
+//
+//	BASE XY
+//
+// ============================================================
+// gridXY => grid window
+@mixin base-xy($width: 100%, $height: 100vh) {
+	width: $width;
+	height: $height;
+}
+
+// gridX => grid width
+@mixin base-x($width: 100%) { width: $width; }
+
+// gridY => grid height
+@mixin base-y($height: 100vh) { height: $height; }
+
+// gridC => grid columns
+@mixin base-columns($columns: 12) {
+	// loop through number of columns
+	@for $i from 1 through $columns {
+		// add a child class for elm to span-# a certain width
+		& > .span-#{$i} {
+			// calculate column span-# width
+			width: span-width(calculate-columns($columns), $i);
+		}
+	}
+}
+
+
+
+
+
+// ============================================================
+//
+//	GRIDINATOR: CSS GRID
+// 
+// @config: _variables.scss
+//	$gridinator-cols
+//	$gridinator-rows 
+//	$gridinator-gap
+//
+// @mixin gridinator:
+//	$type: grid | inline-grid | subgrid;
+//	$columns: (string) "<line-name> <track-size> <line-name> <track-size>";
+//	$rows: (string) "<line-name> <track-size> <line-name> <track-size>";
+//	$gap: (list) "<grid-row-gap>", "<grid-column-gap>";
+//	$justify-items:  start | end | center | stretch;
+//	$align-items:  start | end | center | stretch;
+//	$justify-content:  start | end | center | stretch | space-around | space-between | space-evenly;
+//	$align-content:  start | end | center | stretch | space-around | space-between | space-evenly;
+//
+// @mixin gridinatorChild:
+//	$column: (string): <start-line> / <end-line> | <start-line> / span <value>;
+//	$row: (string): <start-line> / <end-line> | <start-line> / span <value>;
+//	$justify-self: (string): start | end | center | stretch;
+//	$align-self: (string): start | end | center | stretch;
+//
+// @NOTES:
+//	- to use the repeat(12, 1fr) function in grid mixins
+//	  you must supply the parameter as a string => "repeat(12, 1fr)"
+//
+// ============================================================
+// CSS GRIDINATOR
+@mixin gridinator(
+	$type: grid,
+	$columns: $gridinator-cols,
+	$rows: $gridinator-rows,
+	$gap: $gridinator-gap,
+	$justify-items: stretch,
+	$align-items: stretch,
+	$justify-content: stretch,
+	$align-content: stretch
+) {
+	// grid
+	display: $type;
+	// columns
+	grid-template-columns: #{$columns};
+	// rows
+	grid-template-rows: #{$rows};
+	// grid gap
+	grid-gap: #{$gap};
+	// grid alignment
+	justify-content: $justify-content;
+	align-content: $align-content;
+	// item alignment
+	justify-items: $justify-items;
+	align-items: $align-items;
+}
+// CSS GRIDINATOR CHILDREN
+// spacing & alignment
+@mixin g-child($justify-self: stretch, $align-self: stretch) {
+	justify-self: $justify-self;
+	align-self: $align-self;
+}
+// grid columns
+@mixin g-cols($start: 1, $end: 2) {
+	grid-column: #{$start} / #{$end};
+}
+// grid rows
+@mixin g-rows($start: 1, $end: 2) {
+	grid-row: #{$start} / #{$end};
+}
+
+
+
+
+
+// ============================================================
+//
+//	GRID DEBUGGING
+//
+// ============================================================
+// Creates base type baseline overlay and vertical unit overlay.
+// To use on the body tag for example: body { @include debug-vertical-alignment(); } and add class va-debug to the body tag
+@mixin debug-vertical-alignment(
+	$opacity: 0.8,
+	$vertical-unit: $baseline-unit,
+	$type-baseline-mltp: $baseline-mltp,
+	$type-size: $base-font-em
+) {
+	position: relative;
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		display: none;
+	}
+	&::before {
+		z-index: 10;
+		background-image: -webkit-linear-gradient(rgba(233, 0, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
+				background-image: linear-gradient(rgba(233, 0, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
+		background-size: 100% (rhythm-unitless($type-baseline-mltp, $type-size) + 0rem);
+	}
+	&::after {
+		z-index: 9;
+		background-image: -webkit-linear-gradient(rgba(0, 233, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
+						background-image: linear-gradient(rgba(0, 233, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
+		background-size: 100% $vertical-unit;
+	}
+	&.va-debug::before,
+	&.va-debug::after {
+		display: block;
+		pointer-events: none;
+	}
+}
+
+
+
+
+
+// ============================================================
+//
+//	RHYTHM
+//
+// ============================================================
+// Creates a pixel width border top with padding that is a multiple of the base vertical grid unit.
+@mixin rhythm-border-top($border-width: 1px, $lines: $baseline-mltp, $font-size: $base-font-em) {
+	border-top-width: $border-width;
+	padding-top: (($lines * strip-units($baseline-unit)) - strip-units($border-width)) / (strip-units($font-size) * strip-units($base-font-size)) + 0em;
+}
+
+// Creates a pixel width border bottom with padding that is a multiple of the base vertical grid unit.
+@mixin rhythm-border-bottom($border-width: 1px, $lines: $baseline-mltp, $font-size: $base-font-em) {
+	border-bottom-width: $border-width;
+	padding-bottom: (($lines * strip-units($baseline-unit)) - strip-units($border-width)) / (strip-units($font-size) * strip-units($base-font-size)) + 0em;
+}
+
+// Creates a pixel width border with padding that is a multiple of the base vertical grid unit.
+@mixin rhythm-border($border-width: 1px, $lines: $baseline-mltp, $font-size: $base-font-em) {
+	border-width: $border-width;
+	padding: (($lines * strip-units($baseline-unit)) - strip-units($border-width)) / (strip-units($font-size) * strip-units($base-font-size)) + 0em;
+}
+
+
+
+
+
+// ============================================================
+//
+//	FLEXBOX
+//
+// @mixin flex:
+//	$flex: flex | inline-flex;
+//	$direction: row | row-reverse | column | column-reverse;
+//	$wrap: nowrap | wrap | wrap-reverse;
+//	$justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+//	$align-items: flex-start | flex-end | center | baseline | stretch;
+//	$align-content: flex-start | flex-end | center | baseline | stretch;
+//
+// @mixin flexChild:
+//	$order: (number); 0 !default;
+//	$align: auto | flex-start | flex-end | center | baseline | stretch; auto !default;
+//
+// ============================================================
+// flex
+@mixin flex(
+	$display: flex,
+	$direction: row,
+	$wrap: wrap,
+	$justify-content: flex-start,
+	$align-items: stretch,
+	$align-content: stretch
+) {
+	-webkit-display: $display;
+	display: $display;
+	// main-axis & wrap
+	-webkit-flex-flow: $direction $wrap;
+	flex-flow: $direction $wrap;
+	//cross-axis
+	-webkit-justify-content: $justify-content;
+	justify-content: $justify-content;
+	// align items along the main axis ——
+	-webkit-align-items: $align-items; 
+	align-items: $align-items;
+	// align content along the cross axis |
+	-webkit-align-content: $align-content;
+	align-content: $align-content;
+}
+// flex child
+@mixin flex-child(
+	$order: 0,
+	$align: auto,
+	$flex: 0 1 auto // <flex-grow> <flex-shrink> <flex-basis>
+) {
+	-webkit-order: $order;	
+	order: $order;
+	-webkit-align-self: $align;
+	align-self: $align;
+	-webkit-flex: $flex;
+	flex: $flex;
+}
+
+
+
+
+
+// ============================================================
+//
+//	FLOATBOX
+//
+// ============================================================
+// make box
+@mixin box(
+	$width: auto,
+	$height: auto,
+	$display: block
+) {
+	width: $width;
+	height: $height;
+	display: $display;
+}
+// float box
+@mixin float($float: none) {
+	float: $float;
+	// clearfix if float
+	@if (($float == left) or ($float == right)) {
+		&::after {
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+	}
+}
+// position box
+@mixin box-position(
+	$position: relative,
+	$location: (
+		top: auto,
+		right: auto,
+		bottom: auto,
+		left: auto
+	)
+	) {
+	position: $position;
+	@each $direction, $value in $location {
+		#{$direction}: $value;
+	}
+}
+// set z-index
+@mixin z-depth($index: auto) {
+	z-index: $index;
+}
+
+
+
+
+
+// ============================================================
+//
+//	SCROLL BOX: X & Y
+//
+// ============================================================
+// scrollWindow
+@mixin scroll-box($direction: y, $bar: true) {
+	// scroll-box may not exceed actual window size
+	max-height: 100vh;
+	max-width: 100vw;
+	overflow-#{$direction}: scroll;
+	// hide scroll bar if $bar != true
+	@if ($bar != true) {
+		&::-webkit-scrollbar { width: 0px; background: transparent; }
+		&::-webkit-scrollbar-thumb { background: transparent; }
+	}
+}
+// scroll-hide
+@mixin scroll-hide() {
+	&::-webkit-scrollbar { width: 0px; background: transparent; }
+	&::-webkit-scrollbar-thumb { background: transparent; }
+}
+
+
+
+
+
+// ============================================================
+// 
+//	CONTAINERS
+// 
+// @mixin contain:
+//	$breakpoint: 960 !default;
+//	- input amount of px the container will fit (max-width)
+//
+// @implement:
+// .container {
+//     @include contain(1080px);
+// }
+// 
+// ============================================================
+// contain 
+@mixin contain($breakpoint: 960px) {
+	// auto margin
+	margin: auto;
+	max-width: $breakpoint;
+}
+
+
+
+
+
+// ============================================================
+//	
+//	SPACING
+// 
+// ============================================================
+// unitless margin (mltp may be any unit, will return an ratio:scaled value of the same unit)
+@mixin margin($mltp: 1px, $sides: true) {
+	// multiple sides (list)
+	@if is-list($sides) {
+		@each $side in $sides {
+			margin-#{$side}: rhythm-unitless($mltp);
+		}
+	// single side (string)
+	} @else if is-string($sides) {
+		margin-#{$sides}: rhythm-unitless($mltp);
+	// all sides (bool: true)
+	} @else if ($sides == true) or ($sides == "all") {
+		margin: rhythm-unitless($mltp);
+	// no sides (bool: false)
+	} @else {
+		margin: none;
+	}
+}
+// em margin
+@mixin margin-em($mltp: 1, $sides: true) {
+	// multiple sides (list)
+	@if is-list($sides) {
+		@each $side in $sides {
+			margin-#{$side}: rhythm-em($mltp);
+		}
+	// single side (string)
+	} @else if is-string($sides) {
+		margin-#{$sides}: rhythm-em($mltp);
+	// all sides (bool: true)
+	} @else if ($sides == true) or ($sides == "all") {
+		margin: rhythm-em($mltp);
+	// no sides (bool: false)
+	} @else {
+		margin: none;
+	}
+}
+// unitless margin (mltp may be any unit, will return an ratio:scaled value of the same unit)
+@mixin padding($mltp: 1px, $sides: true) {
+	// multiple sides (list)
+	@if is-list($sides) {
+		@each $side in $sides {
+			padding-#{$side}: rhythm-unitless($mltp);
+		}
+	// single side (string)
+	} @else if is-string($sides) {
+		padding-#{$sides}: rhythm-unitless($mltp);
+	// all sides (bool: true)
+	} @else if ($sides == true) or ($sides == "all") {
+		padding: rhythm-unitless($mltp);
+	// no sides (bool: false)
+	} @else {
+		padding: none;
+	}
+}
+// em padding
+@mixin padding-em($mltp: 1, $sides: true) {
+	// multiple sides (list)
+	@if is-list($sides) {
+		@each $side in $sides {
+			padding-#{$side}: rhythm-em($mltp);
+		}
+	// single side (string)
+	} @else if is-string($sides) {
+		padding-#{$sides}: rhythm-em($mltp);
+	// all sides (bool: true)
+	} @else if ($sides == true) or ($sides == "all") {
+		padding: rhythm-em($mltp);
+	// no sides (bool: false)
+	} @else {
+		padding: none;
+	}
+}
+
+
+
+
+
+// ============================================================
+//
+//	TYPOGRAPHY
+//
+// ============================================================
+// Initializes the typesetting
+@mixin typesettings-init($full-screen-responsive: true) {
+	html {
+		font-size: ($base-font-size / 16px) * 100%;
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+		// full screen responsive enabled
+		@if $full-screen-responsive {
+			height: 100vh;
+			width: 100vw;
+		}
+	}
+	body {
+		@include set-leading();
+		// full screen responsive enabled
+		@if $full-screen-responsive {
+			min-height: 100%;
+			min-width: 100%;
+		}
+	}
+}
+// Sets the type in EMs and makes a vertical rhythm unitless line-height
+// that is based on context.
+@mixin set-type(
+	$lines: $baseline-mltp,
+	$font-size: $base-font-em,
+	$silent: false
+) {
+		font-size: $font-size;
+		line-height: rhythm-unitless($lines, $font-size, $silent);
+}
+// Creates a vertical rhythm unitless line-height that is based on context
+@mixin set-leading(
+	$lines: $baseline-mltp,
+	$font-size: $base-font-em,
+	$silent: false
+) {
+		line-height: rhythm-unitless($lines, $font-size, $silent);
+}
+
+
+
+
+
+// ============================================================
+//
+//	BUTTONS
+//
+// ============================================================
+// button base
+@mixin button-base($display: inline-block) {
+	display: $display;
+	font-family: $base-font-headers;
+	font-weight: $btn-font-weight;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+}
+
+// button size, ratio unit
+@mixin button-size($padding-y: 1, $padding-x: 3) {
+	padding: rhythm-unitless($padding-y) rhythm-unitless($padding-x) !important;
+}
+
+// button size em unit
+@mixin button-size-em($padding-y: 1, $padding-x: 3) {
+	padding: rhythm-em($padding-y) rhythm-em($padding-x) !important;
+}
+
+// button color
+@mixin button-color(
+	$color: $black,
+	$color-hover: $white,
+	$background: $white,
+	$background-hover: $black50,
+) {
+	// states
+	@include disabled {
+		color: color-contrast($background);
+		background-color: $background;
+	}
+
+	// base styles
+	color: $color;
+	background: $background;
+
+	// hover state
+	@include hover {
+		cursor: pointer;
+		color: $color-hover;
+		background: $background-hover;
+	}
+
+	// focus & active state
+	@include focus-active {
+		outline: $color-primary auto 2px;
+	}
+}
+
+// button outline
+@mixin button-outline(
+	$color: $black,
+	$color-hover: $grayDark,
+	$background-active: $color,
+	$border-active: lighten($color, 10%)
+) {
+	// disabled
+	@include disabled {
+		color: $black30;
+		background-color: transparent;
+	}
+
+	// base styles
+	color: $color;
+	background-color: transparent;
+	background-image: none;
+	border-color: $color;
+
+	// states
+	@include hover {
+		color: color-contrast($color);
+		background-color: $active-background;
+		border-color: $active-border;
+	}
+
+	// focus
+	@include focus {
+		box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+	}
+}
+
+// button link
+@mixin button-link(
+	$font-weight: $btn-font-weight,
+	$link-color: $color-primary,
+	$link-color-hover: darken($color-primary, 7.5%),
+	$link-decoration-hover: underline
+) {
+	// disabled
+	@include disabled {
+		color: $btn-link-disabled-color;
+	}
+
+	// base styles
+	font-weight: $font-weight;
+	color: $link-color;
+	background-color: transparent;
+
+	// hover
+	@include hover {
+		color: $link-color-hover;
+		text-decoration: $link-decoration-hover;
+		background-color: $transparent;
+		border-color: $transparent;
+	}
+
+	// focus
+	@include focus {
+		text-decoration: $link-decoration-hover;
+		border-color: $transparent;
+		box-shadow: none;
+	}
+}
+
+
+
+
+
+// ============================================================
+//
+//	FORMS
+//
+// ============================================================
+
+// form input
+@mixin form-input-base(
+	$display: block,
+	$border-radius: $form-input-border-radius,
+	$border-focus: $form-input-focus-border-color,
+	$input-color: $form-input-color,
+	$input-background: $form-input-background-color,
+	$input-border: $form-input-border,
+	$input-border-radius: $form-input-border-radius
+) {
+	// base
+	display: $display;
+	width: 100%;
+	font-size: inherit;
+	line-height: inherit;
+
+	// color
+	color: $input-color;
+	background-color: $input-background;
+	background-clip: padding-box;
+
+	// border
+	border: $input-border;
+	border-radius: $input-border-radius;
+
+	// IE10+ fix select caret style default
+	&::-ms-expand {
+		background-color: transparent;
+		border: 0;
+	}
+
+	// placeholder
+	&::-webkit-input-placeholder,
+	&::-moz-placeholder,
+	&:-ms-input-placeholder,
+	&:-moz-placeholder,
+	&::placeholder {
+		color: lighten($input-color, 7.5%);
+		opacity: 1;
+	}
+
+	// disabled & read-only
+	// edge case ignore: HTML5 says that controls under a fieldset > legend:first-child won't be disabled if the fieldset is disabled
+	&:disabled,
+	&[readonly] {
+		color: color-contrast($form-input-disabled-color);
+		background-color: $form-input-disabled-color;
+		opacity: 1;
+		&:hover { cursor: not-allowed !important; }
+	}
+
+}
+
+// form input focus
+@mixin form-input-focus(
+	$input-focus-color: $form-input-focus-color,
+	$input-focus-background: $form-input-focus-background,
+	$input-focus-border-color: $form-input-focus-border-color,
+	$input-box-shadow: $form-input-box-shadow,
+	$input-focus-box-shadow: ($form-input-box-shadow, $form-input-focus-box-shadow),
+) {
+	&:focus {
+		color: $input-focus-color;
+		background-color: $input-focus-background;
+		border-color: $input-focus-border-color;
+		outline: 0;
+		box-shadow: $input-box-shadow, $input-focus-box-shadow;
+	}
+}
+
+// form input plaintext
+@mixin form-input-plaintext() {
+	display: block;
+	width: 100%;
+	margin-bottom: 0; // match inputs if this class comes on inputs with default margins
+	line-height: inherit;
+	background-color: $transparent;
+	border: solid $transparent;
+	border-width: $form-input-border-width, 0;
+}
+
+
+
+
+
+// ============================================================
+//
+//	TABLES
+//
+// ============================================================
+// 
+
+
+
+
+
+
+// ============================================================
+//
+//	IMAGES
+//
+// ============================================================
+
+// responsive images
+@mixin image-fluid {
+	max-width: 100%;
+	height: auto;
+}
+
+// retina images
+@mixin image-retina($file-1x, $file-2x, $width-1x, $height-1x) {
+	// non-retina
+	background-image: url($file-1x);
+	// retina
+	@media only screen and (min-resolution: 192dpi), // IE9-11
+		only screen and (min-resolution: 2dppx) { // HTML5
+		background-image: url($file-2x);
+		background-size: $width-1x $height-1x;
+	}
+}
+
+
+
+
+
+// ============================================================
+//
+//	STATES: PLAIN, HOVER, FOCUS, ACTIVE
+//
+// ============================================================
+
+// hover
+@mixin hover {
+	&:hover, &.hover { @content; }
+}
+
+// focus
+@mixin focus {
+	&:focus, &.focus { @content; }
+}
+
+// active
+@mixin active {
+	&:active, &.active { @content; }
+}
+
+// disabled
+@mixin disabled {
+	&:disabled, &.disabled { @content; }
+}
+
+// hover and focus
+@mixin hover-focus {
+	&:hover, &.hover,
+	&:focus, &.focus {
+		@content;
+	}
+}
+
+// plain-faocus-active
+@mixin plain-hover-focus {
+	&,
+	&:hover, &.hover,
+	&:focus, &.focus {
+		@content;
+	}
+}
+
+// hover-focus-active
+@mixin hover-focus-active {
+	&:hover, &.hover,
+	&:focus, &.focus,
+	&:active, &.active {
+		@content;
+	}
+}
+
+// focus-active
+@mixin focus-active {
+	&:focus, &.focus,
+	&:active, &.active {
+		@content;
+	}
+}
+
+
+
+
+
+// ============================================================
+//
+//	BORDERS
+//
+// ============================================================
+
+// handy border maker
+@mixin border(
+	$sides: true,
+	$border-width: $border-width-default,
+	$border-style: $border-style-default,
+	$border-color: $border-color-default,
+) {
+	// multiple sides (list)
+	@if is-list($sides) {
+		@each $side in $sides {
+			border-#{$side}: $border-width $border-style $border-color;
+		}
+	// single side (string)
+	} @else if is-string($sides) {
+		border-#{$sides}: $border-width $border-style $border-color;
+	// all sides (bool: true)
+	} @else if ($sides == true) or ($sides == "all") {
+		border: $border-width $border-style $border-color;
+	// no sides (bool: false)
+	} @else {
+		border: none;
+	}
+}
+
+@mixin border-radius($radius: $border-radius-default) {
+	border-radius: $radius;
+}
+
+@mixin border-top-radius($radius: $border-radius-default) {
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+@mixin border-right-radius($radius: $border-radius-default) {
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius: $border-radius-default) {
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+@mixin border-left-radius($radius: $border-radius-default) {
+	border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+
+
+
+
+// ============================================================
+//
+//	RESPONSIVE MEDIA
+//
+// mobile first: applies to this screen size and up
+//  
+// $breakpoint: 920px;
+// 
+// .class {
+//     some-property: some-value;
+// 
+//     // using var
+//     @include respond-to($breakpoint) {
+//         some-property: some-new-value;
+//     }
+// 
+//     // create on the fly
+//     @include respond-to(600px) {
+//         some-property: some-new-value;
+//     }
+// 
+//     // using base/config breakpoints (options: small, medium, large, xlarge)
+//     @include breakpoint(small) {
+//         some-property: some-new-value;
+//     }
+//
+//     // using shorthand px value
+//     @include bp(400px) {
+//         some-property: some-new-value;
+//     }
+//
+//     // using shorthand "string"
+//     @include bp(medium) {
+//         some-property: some-new-value;
+//     }
+//     
+// }
+// 
+// ============================================================
+
+// respond-to
+@mixin respond-to($breakpoint, $media: all) {
+	@media only #{$media} and (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+// breakpoints
+@mixin breakpoint($breakpoint, $media: all) {
+	
+	$small:		$breakpoint-sm / $base-font-size * 1em;
+	$medium:	$breakpoint-md / $base-font-size * 1em;
+	$large:		$breakpoint-lg / $base-font-size * 1em;
+	$xlarge:	$breakpoint-sm / $base-font-size * 1em;
+	
+	// match case
+	@if $breakpoint == small {
+		@media only #{$media} and (min-width: $medium) {
+			@content;
+		}
+	} @else if $breakpoint == medium {
+		@media only #{$media} and (min-width: $medium) {
+			@content;
+		}
+	} @else if $breakpoint == large {
+		@media only #{$media} and (min-width: $large) {
+			@content;
+		}
+	} @else if $breakpoint == xlarge {
+		@media only #{$media} and (min-width: $xlarge) {
+			@content;
+		}
+	}
+}
+
+// shorthand
+@mixin bp($breakpoint, $media: all) {
+	// if a string value is supplied (ie. $breakpoint: small)
+	@if is-string($breakpoint) {
+		@include breakpoint($breakpoint, $media) {
+			@content;
+		}
+	// if a px/em/unit value is supplied (ie. $breakpoint: 600px)
+	} @else if is-integer(strip-units($breakpoint)) {
+		@include respond-to($breakpoint, $media) {
+			@content;
+		}
+	}
+}
+
+
+
+
+
+// ============================================================
+//
+//	RETINA DISPLAYS
+//
+// ============================================================
+
+// high-dpi for high pixel density screens like retina displays
+@mixin high-dpi($media: all) {
+	@media only #{$media} and (min--moz-device-pixel-ratio: 1.5),
+		only #{$media} and (-o-min-device-pixel-ratio: 3/2),
+		only #{$media} and (-webkit-min-device-pixel-ratio: 1.5),
+		only #{$media} and (min-device-pixel-ratio: 1.5),
+		only #{$media} and (min-resolution: 144dpi),
+		only #{$media} and (min-resolution: 1.5dppx){
+			@content;
+	}
+}

@@ -1,0 +1,259 @@
+// ============================================================
+//	TYPOGRAPHY
+// ============================================================
+
+// if load
+@if $load-typesettings {
+
+// ============================================================
+//	Default Type styles
+// ============================================================
+// Initialize
+@include typesettings-init($full-screen-responsive);
+
+html { height: 100vh; width: 100vw; }
+body {
+	min-height: 100%;
+	min-width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: $base-font-family;
+	font-weight: 400;
+	color: $black;
+}
+
+
+
+
+
+// RESET TYPE
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+p, blockquote,
+pre, code,
+ol, ul, dl
+{
+	margin-top: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+// HEADERS SETTINGS
+// [1] Applies a margin bottom that is a multiple of the vertical grid in EMs. The first argument is the font size context and the second is multiple of the vertical grid unit.
+// [2] Sets the type to one of the modular scale values and the second argument sets a unitless line-height as a multiple of the vertical grid.
+// [3] A generic media query for tablet size ranges.
+// [4] Applies a margin bottom that is the same vertical grid value as the mobile first rule.
+// [5] Sets the type to one of the modular scale values and the second argument
+// sets a unitless line-height as a multiple of the vertical grid.
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin-top: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	font-family: $base-font-headers;
+	font-weight: bold;
+}
+h1, .h1 {
+	margin-bottom: rhythm-em(1, $ms-up-2); // [1]
+	@include set-type(8, $ms-up-2); // [2]
+	// responsive
+	@media (min-width: 43.75em) { // [3]
+		margin-bottom: rhythm-em(1, $ms-up-3); // [4]
+		@include set-type(10, $ms-up-3); // [5]
+	}
+	@media (min-width: 56.25em) {
+		margin-bottom: rhythm-em(1, $ms-up-4);
+		@include set-type(12, $ms-up-4);
+	}
+}
+h2, .h2 {
+	margin-bottom: rhythm-em(1, $ms-up-1);
+	@include set-type(5, $ms-up-1);
+	// responsive
+	@media (min-width: 43.75em) {
+		margin-bottom: rhythm-em(1, $ms-up-2);
+		@include set-type(6, $ms-up-2)
+	}
+	@media (min-width: 56.25em) {
+		margin-bottom: rhythm-em(1, $ms-up-3);
+		@include set-type(8, $ms-up-3);
+	}
+}
+h3, .h3 {
+	margin-bottom: rhythm-em(1, $ms-up-1);
+	@include set-type(5, $ms-up-1);
+	// responsive
+	@media (min-width: 56.25em) {
+		margin-bottom: rhythm-em(1, $ms-up-2);
+		@include set-type(6, $ms-up-2);
+	}
+}
+h4, .h4 {
+	margin-bottom: rhythm-em(1, $ms-up-1);
+	@include set-type(5, $ms-up-1);
+}
+h5, .h5,
+h6, .h6 {
+	margin-bottom: rhythm-em(1);
+	@include set-type(4);
+}
+
+
+
+
+
+// PARAGRAPH SETTINGS
+p {
+	margin-bottom: rhythm-em($baseline-mltp);
+	@media (min-width: 43.75em) {
+		@if $paragraph-justify {
+			text-align: justify;
+		}
+	}
+}
+@if $paragraph-indent {
+	p + p {
+		margin-top: rhythm-em($baseline-mltp * -1);
+		text-indent: rhythm-em($baseline-mltp);
+	}
+}
+
+
+
+
+
+// BLOCKQUOTES
+blockquote {
+	margin-top: rhythm-em($baseline-mltp);
+	margin-bottom: rhythm-em($baseline-mltp);
+	margin-left: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: rhythm-em(4);
+	border-left: $baseline-unit solid lighten($black, 50%);
+	font-family: $base-font-family;
+	p { margin-bottom: rhythm-em(2); }
+	footer {
+		cite {
+			&:before { content: " – "; }
+		}
+	}
+}
+
+
+
+
+
+// CODE
+pre, code {
+	font-family: $base-font-mono;
+	border: 1px solid #cacaca;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 2px 5px;
+	display: inline;
+}
+pre {
+	display: block;
+	@include padding-em($mltp: 1, $sides: true);
+	margin-bottom: rhythm-em($baseline-mltp);
+	background-color: $black;
+	color: $white;
+}
+
+
+
+
+
+// TIME
+time, .time { text-transform: uppercase; }
+
+
+
+
+
+// ADDRESS
+address {
+	margin-bottom: rhythm-em($baseline-mltp);
+}
+
+
+
+
+
+// LISTS
+ol, ul, dl {
+	margin-bottom: rhythm-em($baseline-mltp);
+	margin-left: rhythm-em($baseline-mltp);
+}
+ul ul,
+ol ol,
+dl dl { margin-left: 0; }
+ul { list-style: disc; }
+ol { list-style: decimal; }
+dt { text-decoration: underline; }
+dt:after { content: ': '; }
+dd { margin-left: rhythm-em(0); }
+
+
+
+
+
+// PROPERTY STYLES
+small, .font-small { @include set-type(3, $ms-down-1); }
+em { font-style: italic; }
+strong { font-weight: bold; }
+i {
+	font-style: italic;
+	&.light { font-weight: lighter; }
+	&.normal { font-weight: normal; }
+	&.bold { font-weight: bolder; }
+}
+b { font-style: bold; }
+
+
+
+
+
+// FONT STYLING
+.font-base { font-family: $base-font-family !important; }
+.font-contrast { font-family: $base-font-headers !important; }
+
+
+
+
+
+// SPECIAL CASES
+// [1] https://developer.mozilla.org/en-US/docs/CSS/font-variant
+abbr {
+	font-variant: small-caps; // [1]
+	font-weight: 600;
+	text-transform: lowercase;
+}
+// Cursor changed to a question mark when it has a title
+abbr[title]:hover { cursor: help; }
+
+// Creates horizontal rules that obey the baseline.
+// [1] Zero outs the user agent border
+hr {
+	margin-top: rhythm-em($baseline-mltp);
+	margin-bottom: rhythm-em($baseline-mltp);
+	border: none; // [1]
+	border-top-color: $black;
+	border-top-style: solid;
+	@include rhythm-border-top(1px, 4);
+}
+
+
+
+
+
+// END if load
+}
