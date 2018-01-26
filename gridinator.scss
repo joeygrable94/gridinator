@@ -34,6 +34,7 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "modules/internal";             // internal vars  —  advance customization only
 @import "modules/functions";            // functions      -  advance customization only
 @import "modules/mixins";               // mixins         -  advance customization only
+@import "modules/scale-modular";        // modular scale  -  a proportional ratio system
 
 
 //	IMPORT COMPONENTS                   // css partials

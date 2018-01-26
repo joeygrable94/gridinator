@@ -13,20 +13,20 @@
 //	BASE XY
 //
 // ============================================================
-// gridXY => grid window
-@mixin base-xy($width: 100%, $height: 100vh) {
+// grid-xy => grid window
+@mixin grid-xy($width: 100%, $height: 100%) {
 	width: $width;
 	height: $height;
 }
 
-// gridX => grid width
-@mixin base-x($width: 100%) { width: $width; }
+// grid-x => grid width
+@mixin grid-x($width: 100%) { width: $width; }
 
-// gridY => grid height
-@mixin base-y($height: 100vh) { height: $height; }
+// grid-y => grid height
+@mixin grid-y($height: 100%) { height: $height; }
 
-// gridC => grid columns
-@mixin base-columns($columns: 12) {
+// grid-c => grid columns
+@mixin grid-columns($columns: 12) {
 	// loop through number of columns
 	@for $i from 1 through $columns {
 		// add a child class for elm to span-# a certain width
@@ -60,7 +60,7 @@
 //	$justify-content:  start | end | center | stretch | space-around | space-between | space-evenly;
 //	$align-content:  start | end | center | stretch | space-around | space-between | space-evenly;
 //
-// @mixin gridinatorChild:
+// @mixin g-child:
 //	$column: (string): <start-line> / <end-line> | <start-line> / span <value>;
 //	$row: (string): <start-line> / <end-line> | <start-line> / span <value>;
 //	$justify-self: (string): start | end | center | stretch;
@@ -73,7 +73,7 @@
 // ============================================================
 // CSS GRIDINATOR
 @mixin gridinator(
-	$type: grid,
+	$display: grid,
 	$columns: $gridinator-cols,
 	$rows: $gridinator-rows,
 	$gap: $gridinator-gap,
@@ -83,7 +83,7 @@
 	$align-content: stretch
 ) {
 	// grid
-	display: $type;
+	display: $display;
 	// columns
 	grid-template-columns: #{$columns};
 	// rows
@@ -118,81 +118,6 @@
 
 // ============================================================
 //
-//	GRID DEBUGGING
-//
-// ============================================================
-// Creates base type baseline overlay and vertical unit overlay.
-// To use on the body tag for example: body { @include debug-vertical-alignment(); } and add class va-debug to the body tag
-@mixin debug-vertical-alignment(
-	$opacity: 0.8,
-	$vertical-unit: $baseline-unit,
-	$type-baseline-mltp: $baseline-mltp,
-	$type-size: $base-font-em
-) {
-	position: relative;
-	&::before,
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		display: none;
-	}
-	&::before {
-		z-index: 10;
-		background-image: -webkit-linear-gradient(rgba(233, 0, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
-				background-image: linear-gradient(rgba(233, 0, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
-		background-size: 100% (rhythm-unitless($type-baseline-mltp, $type-size) + 0rem);
-	}
-	&::after {
-		z-index: 9;
-		background-image: -webkit-linear-gradient(rgba(0, 233, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
-						background-image: linear-gradient(rgba(0, 233, 0, $opacity) 1px, rgba(0, 0, 0, 0) 1px);
-		background-size: 100% $vertical-unit;
-	}
-	&.va-debug::before,
-	&.va-debug::after {
-		display: block;
-		pointer-events: none;
-	}
-}
-
-
-
-
-
-// ============================================================
-//
-//	RHYTHM
-//
-// ============================================================
-// Creates a pixel width border top with padding that is a multiple of the base vertical grid unit.
-@mixin rhythm-border-top($border-width: 1px, $lines: $baseline-mltp, $font-size: $base-font-em) {
-	border-top-width: $border-width;
-	padding-top: (($lines * strip-units($baseline-unit)) - strip-units($border-width)) / (strip-units($font-size) * strip-units($base-font-size)) + 0em;
-}
-
-// Creates a pixel width border bottom with padding that is a multiple of the base vertical grid unit.
-@mixin rhythm-border-bottom($border-width: 1px, $lines: $baseline-mltp, $font-size: $base-font-em) {
-	border-bottom-width: $border-width;
-	padding-bottom: (($lines * strip-units($baseline-unit)) - strip-units($border-width)) / (strip-units($font-size) * strip-units($base-font-size)) + 0em;
-}
-
-// Creates a pixel width border with padding that is a multiple of the base vertical grid unit.
-@mixin rhythm-border($border-width: 1px, $lines: $baseline-mltp, $font-size: $base-font-em) {
-	border-width: $border-width;
-	padding: (($lines * strip-units($baseline-unit)) - strip-units($border-width)) / (strip-units($font-size) * strip-units($base-font-size)) + 0em;
-}
-
-
-
-
-
-// ============================================================
-//
 //	FLEXBOX
 //
 // @mixin flex:
@@ -203,7 +128,7 @@
 //	$align-items: flex-start | flex-end | center | baseline | stretch;
 //	$align-content: flex-start | flex-end | center | baseline | stretch;
 //
-// @mixin flexChild:
+// @mixin flex-child:
 //	$order: (number); 0 !default;
 //	$align: auto | flex-start | flex-end | center | baseline | stretch; auto !default;
 //
@@ -236,14 +161,16 @@
 @mixin flex-child(
 	$order: 0,
 	$align: auto,
-	$flex: 0 1 auto // <flex-grow> <flex-shrink> <flex-basis>
+	$grow: 1,
+	$shrink: 0, 
+	$basis: auto // <flex-grow> <flex-shrink> <flex-basis>
 ) {
 	-webkit-order: $order;	
 	order: $order;
 	-webkit-align-self: $align;
 	align-self: $align;
-	-webkit-flex: $flex;
-	flex: $flex;
+	-webkit-flex: $grow $shrink $basis;
+	flex: $grow $shrink $basis;
 }
 
 
@@ -256,7 +183,7 @@
 //
 // ============================================================
 // make box
-@mixin box(
+@mixin grid-block(
 	$width: auto,
 	$height: auto,
 	$display: block

@@ -1,6 +1,6 @@
 // tables
 table {
-	@include base-x();
+	@include grid-x();
 	@include margin-em($mltp: $baseline-mltp, $sides: bottom);
 }
 

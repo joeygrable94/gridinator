@@ -1,5 +1,5 @@
 // ============================================================
-//	Welcome to BASECAMP!
+//	BE the Grid.
 // ============================================================
 
 /** layout **/
@@ -10,11 +10,15 @@ body {
 }
 
 #window {
+	@include grid-xy(
+		$width: 100vw,
+		$height: 100vh
+	);
 	@include gridinator(
 		$columns: 1fr 5fr,
 		$rows: 1fr
 	);
-	& nav#BasecampSCSS {
+	& nav#Gridinator {
 		@include g-child();
 		@include g-cols(1, 2);
 		@include g-rows(1,2);
@@ -28,7 +32,7 @@ body {
 		@include scroll-box($direction: y, $bar: false);
 		background-color: $black;
 		& a {
-			@include base-x(100%);
+			@include grid-x(100%);
 			@include padding-em($mltp: 2, $sides: top bottom);
 			@include padding-em($mltp: 4, $sides: left right);
 			font-family: $base-font-headers;
@@ -54,7 +58,7 @@ body {
 /** Styles **/
 
 .title {
-	@include base-xy();
+	@include grid-xy(100%, 100vh);
 	@include flex($direction: column, $wrap: nowrap, $justify-content: center, $align-items: center);
 }
 
@@ -73,7 +77,7 @@ body {
 // GRIDS
 	/* symmetrical */
 	.sGrid1 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 1fr 2fr 3fr 3fr 2fr 1fr,
 			$rows: 1fr 1fr 1fr 1fr
@@ -123,7 +127,7 @@ body {
 		}
 	}
 	.sGrid2 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 1fr 3fr 2fr 2fr 3fr 1fr,
 			$rows: 1fr 1fr 1fr 1fr
@@ -173,7 +177,7 @@ body {
 		}
 	}
 	.sGrid3 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 2fr 1fr 3fr 3fr 1fr 2fr, // g-cols 1-7
 			$rows: 1fr 1fr 1fr 1fr
@@ -223,7 +227,7 @@ body {
 		}
 	}
 	.sGrid4 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 3fr 1fr 2fr 2fr 1fr 3fr,
 			$rows: 1fr 1fr 1fr 1fr
@@ -273,7 +277,7 @@ body {
 		}
 	}
 	.sGrid5 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 2fr 3fr 1fr 1fr 3fr 2fr,
 			$rows: 1fr 1fr 1fr 1fr
@@ -323,7 +327,7 @@ body {
 		}
 	}
 	.sGrid6 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 3fr 2fr 1fr 1fr 2fr 3fr,
 			$rows: 1fr 1fr 1fr 1fr
@@ -374,7 +378,7 @@ body {
 	}
 	/* hierarchical */
 	.hGrid1 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 1fr 2fr 3fr 1fr 2fr 3fr,
 			$rows: 1fr 2fr 3fr 4fr
@@ -424,7 +428,7 @@ body {
 		}
 	}
 	.hGrid2 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 1fr 3fr 2fr 1fr 3fr 2fr,
 			$rows: 1fr 2fr 3fr 4fr
@@ -474,7 +478,7 @@ body {
 		}
 	}
 	.hGrid3 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 2fr 1fr 3fr 2fr 1fr 3fr,
 			$rows: 1fr 2fr 3fr 4fr
@@ -524,7 +528,7 @@ body {
 		}
 	}
 	.hGrid4 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 3fr 1fr 2fr 3fr 1fr 2fr,
 			$rows: 1fr 2fr 3fr 4fr
@@ -574,7 +578,7 @@ body {
 		}
 	}
 	.hGrid5 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 2fr 3fr 1fr 2fr 3fr 1fr,
 			$rows: 1fr 2fr 3fr 4fr
@@ -624,7 +628,7 @@ body {
 		}
 	}
 	.hGrid6 {
-		@include base-xy();
+		@include grid-xy(100vw, 100vh);
 		@include gridinator(
 			$columns: 3fr 2fr 1fr 3fr 2fr 1fr,
 			$rows: 1fr 2fr 3fr 4fr
@@ -677,7 +681,7 @@ body {
 
 // GRID samples
 #sampleGrid1 {
-	@include base-xy();
+	@include grid-xy(100vw, 100vh);
 	@include gridinator(
 		$columns: [col-left] 80px [content-start] 12fr [content-end] 80px [col-right],
 		$rows: [row-top] 1fr [content-start] 12fr [content-end]
@@ -710,7 +714,7 @@ body {
 		color: $white;
 
 		& nav {
-			@include base-x();
+			@include grid-x();
 			@include flex();
 			& a {
 				color: $white;
@@ -755,7 +759,7 @@ body {
 
 // COLOR ME SASS
 .colorMeSass {
-	@include base-columns();
+	@include grid-columns();
 	@include flex();
 	@include padding-em($mltp: 5, $sides: $list-lr);
 	& table {
