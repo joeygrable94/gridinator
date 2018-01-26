@@ -1,48 +1,54 @@
 /*
-sass --watch inc/basecamp/basecamp.scss:inc/css/basecamp.css
-sass --watch basecamp/basecamp.scss:css/basecamp.css
+From Root:
+sass --watch inc/gridinator/gridinator.scss:inc/css/gridinator.css
+
+From inc/:
+sass --watch gridinator/gridinator.scss:css/gridinator.css
+
+From gridinator/git:
+sass --watch gridinator.scss:../css/gridinator.css
 */
 
 
-//	CHARSET
+//  CHARSET
 // ===============================================================================================================================
 @charset "UTF-8";
 
 
-//	IMPORT VENDORS						// standardize the browser
+//  IMPORT VENDORS                      // standardize the browser
 // ===============================================================================================================================
-@import "vendors/reset";				// reset browser styles			=> git@ianrose, adapted from Eric A. Meyer
-@import "vendors/normalize";			// normalize device styles		=> git@necolas
-@import "vendors/color/color-me-sass";	// color helpers				=> git@RichardBray
-@import "vendors/color/blend-modes";	// color blend modes			=> git@heygrady
-@import "vendors/animate/animate";		// css animations				=> git@geoffgraham, adapted from Dan Eden's "animate.css"
+@import "vendors/reset";                // reset browser styles         => git@ianrose, adapted from Eric A. Meyer
+@import "vendors/normalize";            // normalize device styles      => git@necolas
+@import "vendors/colors/colors";        // color helpers                => custom mod of original "Color Me Sass" by git@RichardBray
+@import "vendors/color-blend-modes";    // color blend modes            => git@heygrady
+@import "vendors/animate/animate";      // css animations               => git@geoffgraham, adapted from Dan Eden's "animate.css"
 
 
-//	ESTABLISH BASE						// establish your base styles
+//  ESTABLISH BASE                      // establish your base styles
 // ===============================================================================================================================
-@import "base/config-base";				// config		 -	base level customization, !DEFAULTS
+@import "build/config";                 // config         -  base level customization, !DEFAULTS
 
 
-//	IMPORT MODULES						// load internal modules
+//  IMPORT MODULES                      // load internal modules
 // ===============================================================================================================================
-@import "modules/internal";				// internal vars —	advance customization only, !AVOID
-@import "modules/functions";			// functions	 -	advance customization only, !AVOID
-@import "modules/mixins";				// mixins		 -	advance customization only, !AVOID
+@import "modules/internal";             // internal vars  —  advance customization only
+@import "modules/functions";            // functions      -  advance customization only
+@import "modules/mixins";               // mixins         -  advance customization only
 
 
-//	IMPORT COMPONENTS					// css partials
+//	IMPORT COMPONENTS                   // css partials
 // ===============================================================================================================================
-@import "components/typography";		// typography
-@import "components/forms";				// form styles
-@import "components/tables";			// tables styles
-@import "components/buttons";			// button styles
+@import "components/typography";        // typography
+@import "components/forms";             // form styles
+@import "components/tables";            // tables styles
+@import "components/buttons";           // button styles
 
 
 // PROTOTYPING
 // ===============================================================================================================================
-//@import "components/prototype";			// css prototype .css-classes
+//@import "components/prototype";         // css prototype .css-classes
 
 
 //	BUILD CAMP
 // ===============================================================================================================================
-@import "base/build-camp";					// build your basecamp
+@import "build/build";                  // build your basecamp

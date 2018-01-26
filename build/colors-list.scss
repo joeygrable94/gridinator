@@ -1,0 +1,769 @@
+//	Colors List
+// ==================================================
+
+
+
+
+
+//	BLACK / GREY / WHITE
+// ==================================================
+
+
+// Blacks
+$black10:               #e6e6e6 !default;
+$black20:         	    #cccccc !default;
+$black30:       	    #b3b3b3 !default;
+$black40:        	    #999999 !default;
+$black50:      		    #808080 !default;
+$black60:         	    #666666 !default;
+$black70:       	    #4d4d4d !default;
+$black80:       	    #333333 !default;
+$black90:     		    #191919 !default;
+
+
+// Addtional Names
+$black:             : #000000 !default;
+$black-navy         : #17202A !default;
+$black-midnight     : #212F3C !default;
+$black-grey         : #424949 !default;
+$ghost              : #FAFAFA !default;
+$snow               : #F9F9F9 !default;
+$vapor              : #F6F6F6 !default;
+$white-smoke        : #F5F5F5 !default;
+$silver             : #EFEFEF !default;
+$smoke              : #EEEEEE !default;
+$gainsboro          : #DDDDDD !default;
+$iron               : #CCCCCC !default;
+$base               : #AAAAAA !default;
+$aluminum           : #999999 !default;
+$jumbo              : #888888 !default;
+$monsoon            : #777777 !default;
+$steel              : #666666 !default;
+$charcoal           : #555555 !default;
+$tuatara            : #444444 !default;
+$oil                : #333333 !default;
+$jet                : #222222 !default;
+
+
+// Grays
+$gray:                  #999999 !default;
+$gray-light:			#c1c1c1 !default;
+$gray-dark:				#666666 !default;
+$gray-ash:        		#b2beb5 !default;
+$gray-battleship:       #848482 !default;
+$gray-cadet:        	#91a3b0 !default;
+$gray-charcoal:        	#36454f !default;
+$gray-cool:        		#8c92ac !default;
+$gray-gunmetal:        	#423732 !default;
+$gray-silver:        	#c0c0c0 !default;
+$gray-slate:        	#708090 !default;
+$gray-taupe:        	#8b8589 !default;
+$gray-timberwolf:       #dbd7d2 !default;
+
+
+// Whites
+$transparent:       transparent !default;
+$white:                 #ffffff !default;
+$white-antiflash:       #f2f3f4 !default;
+$white-antique:         #faebd7 !default;
+$white-beige:           #f5f5dc !default;
+$white-blond:           #faf0be !default;
+$white-cornsilk:        #fff8dc !default;
+$white-cosmic:          #fff8e7 !default;
+$white-cream:           #fffdd0 !default;
+$white-eggshell:        #f0ead6 !default;
+$white-floral:          #fffaf0 !default;
+$white-honeydew:        #f0fff0 !default;
+$white-isabelline:      #f4f0ec !default;
+$white-navajo:          #ffdead !default;
+$white-pearl:           #eae0c8 !default;
+$white-vanilla:         #f3e5ab !default;
+$white-smoke:           #f5f5f5 !default;
+$white-blossom:         #f6e9de !default;
+
+
+
+
+
+
+
+
+
+
+//	BROWN
+// ==================================================
+
+
+// Defaults
+$brown:             	#663300 !default;
+$brown-dark:         	#472400 !default;
+$brown-darker:       	#331A00 !default;
+$brown-light:        	#754719 !default;
+$brown-lighter:      	#855C33 !default;
+$brown-dull:         	#664728 !default;
+$brown-duller:       	#5E4C3A !default;
+$brown-bright:       	#993300 !default;
+$brown-brighter:     	#A34719 !default;
+
+
+// Variations
+$brown-beaver:        	#9f8170 !default;
+$brown-bistre:        	#3d2b1f !default;
+$brown-bole:        	#79443b !default;
+$brown-bronze:        	#cd7f32 !default;
+$brown-burnt:        	#8a3324 !default;
+$brown-camel:        	#c19a6b !default;
+$brown-chestnut:        #954535 !default;
+$brown-chocolate:       #7b3f00 !default;
+$brown-coffee:        	#6f4e37 !default;
+$brown-copper:        	#b87333 !default;
+$brown-mahogany:        #c04000 !default;
+$brown-sepia:        	#704214 !default;
+
+
+// Additional
+$brown-caramel:        	#AC9D8E !default;
+$brown-praline:        	#9F8E82 !default;
+$brown-truffle:        	#8E796B !default;
+$brown-exotic:        	#8E766C !default;
+$brown-bitter:        	#82695F !default;
+$brown-cocoa:        	#7E6660 !default;
+$brown-mocha:        	#7F6968 !default;
+$brown-clay:        	#D7C3B8 !default;
+
+
+
+
+
+
+
+
+
+
+//	TAN
+// ==================================================
+
+
+// Defaults
+$tan:                	#FFCC99 !default;
+$tan-dark:            	#997A5C !default;
+$tan-darker:          	#4C3D2E !default;
+$tan-light:            	#FFD6AD !default;
+$tan-lighter:          	#FFE0C2 !default;
+$tan-dull:           	#C7925D !default;
+$tan-duller:         	#A67544 !default;
+$tan-bright:           	#FF9966 !default;
+$tan-brighter:        	#FFC2A3 !default;
+
+
+// Additoinal
+$tan-gold:        		#F5CA9E !default;
+$tan-bronze:  		    #EDBC91 !default;
+$tan-wholemeal:    	    #E8B894 !default;
+$tan-nectar:     		#EAB897 !default;
+$tan-melody:    		#E3BBA5 !default;
+$tan-spicy:    			#EAA06F !default;
+$tan-pumpkin:    		#E09C70 !default;
+$tan-ginger:    		#E89F78 !default;
+
+
+
+
+
+
+
+
+
+
+//	AMBER
+// ==================================================
+
+
+// Defaults
+$amber:               	#FF9900 !default;
+$amberDark:            	#995C00 !default;
+$amberDarker:          	#4C2E00 !default;
+$amberLight:           	#FFC266 !default;
+$amberLighter:         	#FFD699 !default;
+$amberDull:           	#D68E22 !default;
+$amberDuller:         	#B38642 !default;
+$amberBright:           #FFB84D !default;
+$amberBrighter:        	#FFD391 !default;
+
+
+// Additional
+$amberQueen:        	#F1995A !default;
+$amberFlame:       		#F9B465 !default;
+$amberSands:    		#F7A955 !default;
+$amberBark:    			#FFB448 !default;
+
+
+
+
+
+
+
+
+
+
+//	PEACHE
+// ==================================================
+
+
+// Default
+$peach:                 #FF5050 !default;
+$peach-dark:            #993030 !default;
+$peach-darker:          #4C1818 !default;
+$peach-light:           #FF9696 !default;
+$peach-lighter:         #FFCACA !default;
+$peach-dull:           	#D67272 !default;
+$peach-duller:         	#BA8C8C !default;
+$peach-bright:          #FF9C9C !default;
+$peach-brighter:        #FFBFBF !default;
+
+
+// Additional
+$peach-sorbet:        	#f5d8d2 !default;
+$peach-shimmer:   		#fdefe2 !default;
+
+
+
+
+
+
+
+
+
+
+//	RED
+// ==================================================
+
+
+// Defaults
+$red:                 	#D42C2C !default;
+$red-dark:             	#7A0000 !default;
+$red-darker:           	#3D0000 !default;
+$red-light:             #DB4D4D !default;
+$red-lighter:           #F0B2B2 !default;
+$red-dull:            	#993333 !default;
+$red-duller:           	#824D4D !default;
+$red-bright:           	#FF0000 !default;
+$red-brighter:          #FF6E6E !default;
+
+
+// Variations
+$red-auburn:       		#a52a2a !default;
+$red-burgundy:        	#9f1d35 !default;
+$red-chestnut:        	#9a1a00 !default;
+$red-crimson:        	#dc143c !default;
+$red-brick:        		#b22222 !default;
+$red-wood:        		#ab4e52 !default;
+$red-rust:        		#b7410e !default;
+$red-wine:        		#722f37 !default;
+
+
+// Brands
+$red-google:       		#db4a39 !default;
+$red-lastfm:        	#c3000d !default;
+$red-pinterest:        	#c8232c !default;
+$red-youtube:        	#c4302b !default;
+
+
+// Additional
+$red-raspberry:   		#bf545a !default;
+$red-diva:   			#b5787d !default;
+$red-ruby:   			#7d3d3e !default;
+$red-summer:   			#a05a5c !default;
+$red-fire:   			#B24848 !default;
+$red-fountain:   		#A64048 !default;
+$red-autumn:   			#A34847 !default;
+$red-bloom:   			#9D5351 !default;
+$red-thai:  			#AA5452 !default;
+$red-volcanic:		  	#B5473A !default;
+
+
+// Zurb Foundation 1
+$red-zurb:        		#c60f13 !default;
+
+
+
+
+
+
+
+
+
+
+//	ORANGE
+// ==================================================
+
+
+// Default
+$orange:               	#FF6600 !default;
+$orange-dark:           #993D00 !default;
+$orange-darker:         #4C1F00 !default;
+$orange-light:          #FF944D !default;
+$orange-lighter:        #FFC299 !default;
+$orange-dull:           #C96B2C !default;
+$orange-duller:         #A16740 !default;
+$orange-bright:         #FF9933 !default;
+
+
+// Brands
+$orange-amazon:         #e47911 !default;
+$orange-blogger:        #fc4f08 !default;
+$orange-grooveshark:    #f77f00 !default;
+$orange-hacker-news:    #ff6600 !default;
+$orang-sound-cloud:     #ff7700 !default;
+$orange-ubuntu:      	#dd4814 !default;
+
+
+// Additional
+$orange-addvocate:       #ff6138 !default;
+$orange-ginger:     	 #995039 !default;
+$orange-autumn:       	 #BE5F37 !default;
+$orange-dawn: 	 		 #E47C6C !default;
+$orange-bongo: 	 		 #E66E5B !default;
+$orange-mango: 			 #E98762 !default;
+$orange-coral: 			 #EC926F !default;
+$orange-paprika: 	 	 #CF5141 !default;
+$orange-african: 		 #DB6335 !default;
+$orange-flame: 	 		 #D46946 !default;
+$orange-auburn: 	     #DD8251 !default;
+$orange-harvest: 	 	 #EE8C4D !default;
+$orange-sands: 			 #EB8830 !default;
+
+
+
+
+
+
+
+
+
+
+//	YELLOW
+// ==================================================
+
+
+// Defaults
+$yellow:               	#FFCC00 !default;
+$yellow-dark:           #806600 !default;
+$yellow-darker:         #332900 !default;
+$yellow-light:          #FFDB4D !default;
+$yellow-lighter:        #FFEB99 !default;
+$yellow-dull:          	#CFB036 !default;
+$yellow-duller:         #B39F52 !default;
+$yellow-bright:        	#FFFF00 !default;
+$yellow-brighter:       #FFFF66 !default;
+
+
+// Variations
+$yellow-buff:        	#f0dc82 !default;
+$yellow-gold:        	#ffd700 !default;
+$yellow-goldmetal:      #d4af37 !default;
+$yellow-jasmine:       	#f8de7e !default;
+$yellow-maize:        	#fbec5d !default;
+$yellow-saffron:       	#f4c430 !default;
+$yellow-sunglow:        #ffcc33 !default;
+$yellow-light:        	#fdfc8f !default;
+
+
+// Additional
+$yellow-aboutme:        #ffcc33 !default;
+$yellow-aim:          	#fcd20b !default;
+$yellow-pharaoh:   	    #FDC46B !default;
+$yellow-havana:			#FBBB5C !default;
+$yellow-sunny:			#FFD251 !default;
+$yellow-delhi:			#FFC924 !default;
+$yellow-spring:			#FFCD59 !default;
+$yellow-sunflower: 		#FFC43C !default;
+$yellow-glaze:			#FFC054 !default;
+$yellow-breeze:			#F0D458 !default;
+$yellow-easter:			#FECF51 !default;
+$yellow-lemon:			#FFD865 !default;
+$yellow-buttercup:		#F9C833 !default;
+
+
+
+
+
+
+
+
+
+
+//	GREEN
+// ==================================================
+
+
+// Defaults
+$green:               	#33CC33 !default;
+$green-dark:            #1F7A1F !default;
+$green-darker:          #0F3D0F !default;
+$green-light:           #5CD65C !default;
+$green-lighter:         #85E085 !default;
+$green-dull:           	#009933 !default;
+$green-duller:         	#428057 !default;
+$green-bright:         	#66FF33 !default;
+$green-brighter:        #99FF66 !default;
+
+
+// Variations
+$green-apple:        	#8db600 !default;
+$green-asparagus:       #7ba05b !default;
+$green-olive:        	#556b2f !default;
+$green-fern:        	#4f7942 !default;
+$green-forest:        	#228b22 !default;
+$green-hunter:        	#355e3b !default;
+$green-mint:        	#3eb489 !default;
+$green-office:        	#008000 !default;
+$green-sea:        		#2e8b57 !default;
+$green-spring:        	#a7fc00 !default;
+$green-teal:        	#008080 !default;
+
+
+// Brands
+$green-evernote:        #5ba525 !default;
+$green-forrst:        	#5b9a68 !default;
+$green-groupon:        	#82b548 !default;
+$green-kickstarter:     #87c442 !default;
+$green-nvidia:      	#76b900 !default;
+$green-spotify:      	#81b71a !default;
+$green-zerply:      	#9dcc7a !default;
+
+
+// Brands
+$green-spa:      		#00AA8F !default;
+$green-falls:      		#33AD7B !default;
+$green-granada:      	#57B176 !default;
+$green-garland:   		#68AF6B !default;
+$green-parrot:      	#75B65D !default;
+$green-creek:      		#89B555 !default;
+$green-kiwi:      		#98B641 !default;
+$green-lime:      		#B6BF3C !default;
+
+
+// Zurb Foundation 1
+$green-zurb:        	#5da423 !default;
+
+
+
+
+
+
+
+
+
+
+//	LIME
+// ==================================================
+
+
+// Defaults
+$lime:               	#B8E62E !default;
+$lime-dark:            	#7A991F !default;
+$lime-darker:          	#3D4C0F !default;
+$lime-light:           	#D6FF5C !default;
+$lime-lighter:         	#E0FF85 !default;
+$lime-dull:           	#A6C44B !default;
+$lime-duller:         	#94A856 !default;
+$lime-bright:         	#BFFF00 !default;
+$lime-brighter:        	#D7FF5E !default;
+
+
+
+
+
+
+
+
+
+
+// TURQUOISE
+// ==================================================
+
+
+// Defaults
+$turquoise:              #48E8C8 !default;
+$turquoise-dark:         #00997A !default;
+$turquoise-darker:       #006652 !default;
+$turquoise-light:        #6BE8CF !default;
+$turquoise-lighter:      #8EE8D6 !default;
+$turquoise-dull:         #52CCB4 !default;
+$turquoise-duller:       #69B8A8 !default;
+$turquoise-bright:       #00FFCC !default;
+$turquoise-brighter:     #80FFE6 !default;
+
+
+// Additional
+$turquoise-teal:   		 #01969c !default;
+$turquoise-dawn:   		 #35AFBA !default;
+$turquoise-crystal:   	 #2BA8A8 !default;
+
+
+
+
+
+
+
+
+
+
+//	BLUE
+// ==================================================
+
+
+// Defaults
+$blue:             		#0066FF !default;
+$blue-dark:         	#003D99 !default;
+$blue-darker:       	#002966 !default;
+$blue-light:        	#4D94FF !default;
+$blue-lighter:      	#80B2FF !default;
+$blue-dull:         	#0066CC !default;
+$blue-duller:       	#336699 !default;
+$blue-bright:       	#3399FF !default;
+$blue-brighter:     	#70B8FF !default;
+
+
+// Variations
+$blue-airforce:        	#5d8aa8 !default;
+$blue-azure:        	#007fff !default;
+$blue-baby:        		#89cff0 !default;
+$blue-french:        	#318ce7 !default;
+$blue-celeste:        	#b2ffff !default;
+$blue-columbia:        	#75b2dd !default;
+$blue-sky:        		#73c2fb !default;
+$blue-midnight:        	#191970 !default;
+$blue-navy:        		#000080 !default;
+$blue-royal:        	#4169e1 !default;
+$blue-sapphire:        	#0f52ba !default;
+$blue-steel:        	#4682b4 !default;
+
+
+// Brands
+$blue-behance:        	#053eff !default;
+$blue-dropbox:        	#3d9ae8 !default;
+$blue-facebook:        	#3b5998 !default;
+$blue-flickr:        	#0063dc !default;
+$blue-foursquare:       #25a0ca !default;
+$blue-linkedIn:        	#0e76a8 !default;
+$blue-rdio:        		#008fd5 !default;
+$blue-skype:        	#00aff0 !default;
+$blue-twitter:        	#55acee !default;
+$blue-vimeo:        	#86c9ef !default;
+$blue-virb:        		#06afd8 !default;
+
+
+// Additional
+$blue-sea:        		#668ebf !default;
+$blue-babe:        		#96b5d4 !default;
+$blue-reflection:       #9ab7b3 !default;
+$blue-holiday:        	#0097C8 !default;
+$blue-stonewash:        #648e9c !default;
+$blue-cyan:      		#36a0ca !default;
+$blue-sapphire:    		#2c405b !default;
+$blue-lake:        		#476a88 !default;
+$blue-breton:        	#4d5965 !default;
+$blue-seduction:        #4C84B8 !default;
+$blue-cloud:      		#6883B6 !default;
+
+
+// Zurb Foundation 1
+$blue-zurb:        		#2ba6cb !default;
+
+
+
+
+
+
+
+
+
+
+//	PURPLE
+// ==================================================
+
+
+// Defaults
+$purple:             	#9966FF !default;
+$purple-dark:         	#5C3D99 !default;
+$purple-darker:       	#2E1F4C !default;
+$purple-light:        	#AD85FF !default;
+$purple-lighter:      	#C2A3FF !default;
+$purple-dull:         	#957BC7 !default;
+$purple-duller:       	#9589AD !default;
+$purple-bright:       	#9933FF !default;
+$purple-brighter:     	#AD5CFF !default;
+
+
+// Variations
+$purple-amethyst:       #9966cc !default;
+$purple-cerise:        	#de3163 !default;
+$purple-fandango:       #b53389 !default;
+$purple-heliotrope:     #df73ff !default;
+$purple-lavendar:      	#b57edc !default;
+$purple-magenta:       	#ff0090 !default;
+$purple-orchid:        	#da70d6 !default;
+$purple-plum:        	#8e4585 !default;
+
+
+// Brands
+$purple-heroku:        	#6567a5 !default;
+$purple-yahoo:        	#720e9e !default;
+
+
+// Additional
+$purple-rose:    		 #865873 !default;
+$purple-blush:   		 #864E66 !default;
+$purple-opera: 	 		 #B977A9 !default;
+$purple-verona: 	 	 #A77AAC !default;
+$purple-spring: 	 	 #A389B8 !default;
+$purple-blossom:  		 #8A7AA2 !default;
+$purple-showers:  		 #7571A4 !default;
+$purple-lilac:  		 #797FA8 !default;
+
+
+
+
+
+
+
+
+
+
+//	PINK
+// ==================================================
+
+
+// Defaults
+$pink:             		#FF33CC !default;
+$pink-dark:         	#B2248F !default;
+$pink-darker:       	#661452 !default;
+$pink-light:        	#FF5CD6 !default;
+$pink-lighter:      	#FF85E0 !default;
+$pink-dull:         	#CC3399 !default;
+$pink-duller:       	#993366 !default;
+$pink-bright:       	#FF66CC !default;
+$pink-brighter:     	#FF99CC !default;
+
+
+// Variations
+$pink-amaranth:         #e52b50 !default;
+$pink-brink:        	#fb607f !default;
+$pink-carmine:          #960018 !default;
+$pink-carnation:        #ffa6c9 !default;
+$pink-cerise:        	#de3163 !default;
+$pink-coral:        	#f88379 !default;
+$pink-deep:        	 	#ff1493 !default;
+$pink-fandago:          #b53389 !default;
+$pink-rose:        	    #f64a8a !default;
+$pink-fuchsia:          #ff00ff !default;
+$pink-hot:        	    #ff69b4 !default;
+$pink-magenta:          #ff0090 !default;
+$pink-ruby:        	    #e0115f !default;
+$pink-salmon:           #ff91a4 !default;
+
+
+// Brands
+$pink-dribbble:         #ea4c89 !default;
+$pink-flickr:           #ff0084 !default;
+
+
+// Additional
+$pink-berry:     		 #d46f8d !default;
+$pink-plum:     	     #952c57 !default;
+$pink-blush:     	     #954D65 !default;
+$pink-adobe:       		 #9F5C60 !default;
+$pink-nevada:       	 #AC545C !default;
+$pink-flamingo:   		 #C16B9E !default;
+$pink-candy:   	 		 #BB597E !default;
+$pink-fuchsia:   	 	 #C25C77 !default;
+$pink-rose:   			 #CF5F6F !default;
+$pink-party:   			 #D87082 !default;
+
+
+
+
+
+
+
+
+
+
+//	BOOTSTRAP
+// ==================================================
+
+
+// Grays
+$black:                 				#000 	!default;
+$gray-darker:            				#222 	!default;
+$gray-dark:              				#333 	!default;
+$gray:                  				#555 	!default;
+$gray-light:             				#999 	!default;
+$gray-lighter:           				#eee 	!default;
+$white:                 				#fff 	!default;
+
+
+// Accent Colors
+$boot-blue:                  			#049cdb !default;
+$boot-blue-dark:              			#0064cd !default;
+$boot-green:                 			#46a546 !default;
+$boot-red:                   			#9d261d !default;
+$boot-yellow:                			#ffc40d !default;
+$boot-orange:                			#f89406 !default;
+$boot-pink:                  			#c3325f !default;
+$boot-purple:                			#7a43b6 !default;
+
+
+// Additional
+$link-color:             				#08c 	!default;
+$table-background-accent:         		#f9f9f9 !default; 
+$table-background-hover:          		#f5f5f5 !default; 
+$btn-info-background:                 	#5bc0de !default;
+$btn-info-ackground-highlight:        	#2f96b4 !default;
+$btn-success-background:              	#62c462 !default;
+$btn-success-background-highlight:     	#51a351 !default;
+$btn-danger-background:               	#ee5f5b !default;
+$btn-danger-background-highlight:      	#bd362f !default;
+$btn-inverse-background:              	#444 	!default;
+$input-border:                   		#ccc 	!default;
+$dropdown-divider-top:            		#e5e5e5 !default;
+$navbar-text:                      		#777 	!default;
+$navbar-inverse-background:             #111111 !default;
+$navbar-inverse-background-highlight:   #222222 !default;
+$navbar-nverse-border:                  #252525 !default;
+$pagination-border:                    	#ddd 	!default;
+$warning-text:             				#c09853 !default;
+$warning-background:       				#fcf8e3 !default;
+$error-text:               				#b94a48 !default;
+$error-background:         				#f2dede !default;
+$success-text:             				#468847 !default;
+$success-background:       				#dff0d8 !default;
+$info-text:                				#3a87ad !default; 
+$info-background:          				#d9edf7 !default;
+
+
+
+
+
+
+
+
+
+
+//	FOUNDATION
+// ==================================================
+
+
+// Default
+$primary-color      : #008CBA !default;   // bondi-blue
+$secondary-color    : #e7e7e7 !default;   // white-lilac
+$alert-color        : #f04124 !default;   // cinnabar
+$success-color      : #43AC6A !default;   // sea-green
+$warning-color      : #f08a24 !default;   // carrot
+$info-color         : #a0d3e8 !default;   // cornflower
+
+
+
+
