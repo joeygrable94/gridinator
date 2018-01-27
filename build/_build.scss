@@ -39,6 +39,9 @@ body {
 			text-decoration: none;
 			color: $white;
 			&:hover { background-color: lighten($black, 25); }
+			&.l2 {
+				@include padding-em(8, $sides: left);
+			}
 		}
 	}
 	& #theView {
@@ -757,11 +760,12 @@ body {
 
 
 
-// COLOR ME SASS
-.colorMeSass {
-	@include grid-columns();
+// COLORS
+.colors {
+	//@include grid-columns();
 	@include flex();
 	@include padding-em($mltp: 5, $sides: $list-lr);
+	@include contain(720px);
 	& table {
 		@include flex-child();
 		border-spacing: 1em;
@@ -773,7 +777,7 @@ body {
 // BUTTONS
 .buttons {
 	@include margin-em($mltp: 4, $sides: bottom);
-	
+	@include contain(720px);
 }
 
 
