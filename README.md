@@ -5,6 +5,7 @@ Welcome to Gridinator, a SASS/SCSS prototyping framework which allows you to wri
 View the latest stable version in use at [JoeyGrable.com/git/Gridinator](http://joeygrable.com/git/Gridinator/)
 
 ## To Do
+- edit Colors page to updated color vars syntax
 - add CSS3 mixins
     - box-shadow
     - transition
