@@ -24,7 +24,13 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "vendors/animate/animate";      // css animations               => git@geoffgraham, adapted from Dan Eden's "animate.css"
 
 
-//  ESTABLISH BASE                      // establish your base styles
+//	IMPORT CUSTOM FONTS
+// ===============================================================================================================================
+@import "fonts/font-face";              // mixin to include fonts       => git@TMMC
+@import "fonts/font-imports";           // import custom font families
+
+
+//  CONFIG BUILD
 // ===============================================================================================================================
 @import "build/config";                 // config         -  base level customization, !DEFAULTS
 
@@ -45,11 +51,12 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "components/buttons";           // button styles
 
 
-// PROTOTYPING
+//	PROTOTYPING
 // ===============================================================================================================================
 //@import "components/prototype";         // css prototype .css-classes
 
 
-//	BUILD CAMP
+//	BUILD
 // ===============================================================================================================================
-@import "build/build";                  // build your basecamp
+@import "build/build";                  // build
+

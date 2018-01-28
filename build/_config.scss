@@ -91,10 +91,10 @@ $paragraph-indent: true !default;
 $paragraph-justify: false !default;
 
 // base font family
-$base-font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif !default;
+$base-font-family: 'akzg-light', Helvetica, sans-serif !default;
 
 // headers fonts
-$base-font-headers: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif !default;
+$base-font-headers: 'akzg-super', Helvetica, sans-serif !default;
 
 // monospaced fonts
 $base-font-mono: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace !default;
