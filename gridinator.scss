@@ -10,18 +10,21 @@ sass --watch gridinator.scss:../css/gridinator.css
 */
 
 
+
 //  CHARSET
 // ===============================================================================================================================
 @charset "UTF-8";
+
 
 
 //  IMPORT VENDORS                      // standardize the browser
 // ===============================================================================================================================
 @import "vendors/reset";                // reset browser styles         => git@ianrose, adapted from Eric A. Meyer
 @import "vendors/normalize";            // normalize device styles      => git@necolas
-@import "vendors/colors/colors";        // color helpers                => custom mod of original "Color Me Sass" by git@RichardBray
+@import "vendors/colors/colors";        // color helpers                => custom mod of "Color Me Sass" by git@RichardBray
 @import "vendors/color-blend-modes";    // color blend modes            => git@heygrady
 @import "vendors/animate/animate";      // css animations               => git@geoffgraham, adapted from Dan Eden's "animate.css"
+
 
 
 //	IMPORT CUSTOM FONTS
@@ -30,9 +33,11 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "fonts/font-imports";           // import custom font families
 
 
+
 //  CONFIG BUILD
 // ===============================================================================================================================
 @import "build/config";                 // config         -  base level customization, !DEFAULTS
+
 
 
 //  IMPORT MODULES                      // load internal modules
@@ -40,15 +45,18 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "modules/internal";             // internal vars  —  advance customization only
 @import "modules/functions";            // functions      -  advance customization only
 @import "modules/mixins";               // mixins         -  advance customization only
-@import "modules/scale-modular";        // modular scale  -  a proportional ratio system
+@import "modules/scale-modular";        // modular scale  -  proportional ratio system
+
 
 
 //	IMPORT COMPONENTS                   // css partials
 // ===============================================================================================================================
-@import "components/typography";        // typography
+//@import "components/type-modular";      // modular scale typography
+@import "components/type-contrast";     // contrast scale typography
 @import "components/forms";             // form styles
 @import "components/tables";            // tables styles
 @import "components/buttons";           // button styles
+
 
 
 //	PROTOTYPING
@@ -56,7 +64,9 @@ sass --watch gridinator.scss:../css/gridinator.css
 //@import "components/prototype";         // css prototype .css-classes
 
 
+
 //	BUILD
 // ===============================================================================================================================
 @import "build/build";                  // build
+
 

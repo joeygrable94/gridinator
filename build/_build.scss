@@ -39,9 +39,8 @@ body {
 			text-decoration: none;
 			color: $white;
 			&:hover { background-color: lighten($black, 25); }
-			&.l2 {
-				@include padding-em(8, $sides: left);
-			}
+			&.l2 { @include padding-em(6, $sides: left); }
+			&.l3 { @include padding-em(8, $sides: left); }
 		}
 	}
 	& #theView {

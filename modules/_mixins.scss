@@ -18,14 +18,20 @@
 	width: $width;
 	height: $height;
 }
+@mixin grid-xy-max($width: 100%, $height: 100%) {
+	max-width: $width;
+	max-height: $height;
+}
 
 // grid-x => grid width
 @mixin grid-x($width: 100%) { width: $width; }
+@mixin grid-x-max($width: 100%) { max-width: $width; }
 
 // grid-y => grid height
 @mixin grid-y($height: 100%) { height: $height; }
+@mixin grid-y-max($height: 100%) { max-height: $height; }
 
-// grid-c => grid columns
+// grid-columns
 @mixin grid-columns($columns: 12) {
 	// loop through number of columns
 	@for $i from 1 through $columns {
@@ -35,6 +41,11 @@
 			width: span-width(calculate-columns($columns), $i);
 		}
 	}
+}
+
+// grid-c => grid-columns shorthand
+@mixin grid-c($cols: 12) {
+	@include grid-columns($cols);
 }
 
 
@@ -84,15 +95,20 @@
 ) {
 	// grid
 	display: $display;
+
 	// columns
 	grid-template-columns: #{$columns};
+
 	// rows
 	grid-template-rows: #{$rows};
+
 	// grid gap
 	grid-gap: #{$gap};
+
 	// grid alignment
 	justify-content: $justify-content;
 	align-content: $align-content;
+
 	// item alignment
 	justify-items: $justify-items;
 	align-items: $align-items;
@@ -144,15 +160,19 @@
 ) {
 	-webkit-display: $display;
 	display: $display;
+
 	// main-axis & wrap
 	-webkit-flex-flow: $direction $wrap;
 	flex-flow: $direction $wrap;
+
 	//cross-axis
 	-webkit-justify-content: $justify-content;
 	justify-content: $justify-content;
+
 	// align items along the main axis ——
 	-webkit-align-items: $align-items; 
 	align-items: $align-items;
+
 	// align content along the cross axis |
 	-webkit-align-content: $align-content;
 	align-content: $align-content;
@@ -233,19 +253,33 @@
 
 // ============================================================
 //
-//	SCROLL BOX: X & Y
+//	SCROLL: X & Y
 //
 // ============================================================
-// scrollWindow
-@mixin scroll-box($direction: y, $bar: true) {
-	// scroll-box may not exceed actual window size
+// scroll-window
+@mixin scroll-window($direction: y, $bar: true) {
+	// scroll-window may not exceed actual window size
 	max-height: 100vh;
 	max-width: 100vw;
 	overflow-#{$direction}: scroll;
 	// hide scroll bar if $bar != true
 	@if ($bar != true) {
-		&::-webkit-scrollbar { width: 0px; background: transparent; }
-		&::-webkit-scrollbar-thumb { background: transparent; }
+		@include scroll-hide();
+	}
+}
+// scroll-box
+@mixin scroll-box(
+	$width: 100%,
+	$height: 100%,
+	$direction: y,
+	$bar: true
+) {
+	height: $height;
+	width: $width;
+	overflow-#{$direction}: scroll;
+	// hide scroll bar if $bar != true
+	@if ($bar != true) {
+		@include scroll-hide();
 	}
 }
 // scroll-hide
@@ -408,6 +442,16 @@
 	$silent: false
 ) {
 		line-height: rhythm-unitless($lines, $font-size, $silent);
+}
+// font contrast mixin option
+@mixin font-contrast(
+	$family: $base-font-family,
+	$weight: inherit,
+	$style: inherit
+) {
+	font-family: $family;
+	font-weight: $weight;
+	font-style: $style;
 }
 
 
