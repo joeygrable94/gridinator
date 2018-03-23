@@ -22,8 +22,8 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "vendors/reset";                // reset browser styles         => git@ianrose, adapted from Eric A. Meyer
 @import "vendors/normalize";            // normalize device styles      => git@necolas
 @import "vendors/colors/colors";        // color helpers                => custom mod of "Color Me Sass" by git@RichardBray
-@import "vendors/color-blend-modes";    // color blend modes            => git@heygrady
-@import "vendors/animate/animate";      // css animations               => git@geoffgraham, adapted from Dan Eden's "animate.css"
+//@import "vendors/color-blend-modes";    // color blend modes            => git@heygrady
+//@import "vendors/animate/animate";      // css animations               => git@geoffgraham, adapted from Dan Eden's "animate.css"
 
 
 
@@ -51,8 +51,8 @@ sass --watch gridinator.scss:../css/gridinator.css
 
 //	IMPORT COMPONENTS                   // css partials
 // ===============================================================================================================================
-//@import "components/type-modular";      // modular scale typography
-@import "components/type-contrast";     // contrast scale typography
+@import "components/type-modular";      // modular scale typography
+//@import "components/type-contrast";     // contrast scale typography
 @import "components/forms";             // form styles
 @import "components/tables";            // tables styles
 @import "components/buttons";           // button styles

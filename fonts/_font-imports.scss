@@ -3,11 +3,11 @@
 // ==================================================
 
 // place your font files in THIS same folder,
-// the $font-path is relative to this location '../gridinator/fonts/'
-
+// the $font-path is relative to this location '../scss/fonts/'
+/*
 @include _font-face(
 	$font-family: 'akzg-bold',
-	$font-path: '../gridinator/fonts/',
+	$font-path: '../scss/fonts/',
 	$font-file-name: 'AkzidenzGrotesk-Bold',
 	$font-style: bold,
 	$font-weight: bold,
@@ -18,7 +18,7 @@
 
 @include _font-face(
 	$font-family: 'akzg-light',
-	$font-path: '../gridinator/fonts/',
+	$font-path: '../scss/fonts/',
 	$font-file-name: 'AkzidenzGrotesk-Light',
 	$font-style: light,
 	$font-weight: light,
@@ -29,7 +29,7 @@
 
 @include _font-face(
 	$font-family: 'akzg-light-italic',
-	$font-path: '../gridinator/fonts/',
+	$font-path: '../scss/fonts/',
 	$font-file-name: 'AkzidenzGrotesk-LightItalic',
 	$font-style: italic,
 	$font-weight: light,
@@ -40,7 +40,7 @@
 
 @include _font-face(
 	$font-family: 'akzg-super',
-	$font-path: '../gridinator/fonts/',
+	$font-path: '../scss/fonts/',
 	$font-file-name: 'AkzidenzGrotesk-Super',
 	$font-style: bold,
 	$font-weight: bolder,
@@ -48,3 +48,4 @@
 	$text-rendering: auto,
 	$font-formats: (otf: opentype)
 );
+*/
