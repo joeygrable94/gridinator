@@ -22,7 +22,11 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "vendors/reset";                // reset browser styles         => git@ianrose, adapted from Eric A. Meyer
 @import "vendors/normalize";            // normalize device styles      => git@necolas
 @import "vendors/colors/colors";        // color helpers                => custom mod of "Color Me Sass" by git@RichardBray
+<<<<<<< HEAD
 //@import "vendors/color-blend-modes";    // color blend modes            => git@heygrady
+=======
+@import "vendors/color-blend-modes";    // color blend modes            => git@heygrady
+>>>>>>> 3827719f929ca98019940dff4d816d3a0fe02710
 //@import "vendors/animate/animate";      // css animations               => git@geoffgraham, adapted from Dan Eden's "animate.css"
 
 
@@ -45,12 +49,16 @@ sass --watch gridinator.scss:../css/gridinator.css
 @import "modules/internal";             // internal vars  —  advance customization only
 @import "modules/functions";            // functions      -  advance customization only
 @import "modules/mixins";               // mixins         -  advance customization only
-@import "modules/scale-modular";        // modular scale  -  proportional ratio system
+@import "modules/modular-scale-ratio";  // modular scale  -  proportional ratio system
 
 
 
 //	IMPORT COMPONENTS                   // css partials
 // ===============================================================================================================================
+<<<<<<< HEAD
+=======
+@import "components/base";				// base, universal styles
+>>>>>>> 3827719f929ca98019940dff4d816d3a0fe02710
 @import "components/type-modular";      // modular scale typography
 //@import "components/type-contrast";     // contrast scale typography
 @import "components/forms";             // form styles
